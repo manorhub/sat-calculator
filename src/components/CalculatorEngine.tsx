@@ -349,11 +349,11 @@ export default function CalculatorEngine({ slug, lang = 'es' }: CalculatorEngine
       </div>
 
       {/* Navigation Tabs */}
-      <div className="border-b border-slate-200 dark:border-slate-800 mb-6">
-        <nav className="flex space-x-8" aria-label="Tabs">
+      <div className="border-b border-slate-200 dark:border-slate-800 mb-6 overflow-x-auto scrollbar-none">
+        <nav className="flex space-x-8 min-w-max pb-1" aria-label="Tabs">
           <button
             onClick={() => setActiveTab('calculator')}
-            className={`py-4 px-1 border-b-2 font-medium text-sm transition-all duration-200 ${
+            className={`py-4 px-1 border-b-2 font-medium text-sm transition-all duration-200 whitespace-nowrap ${
               activeTab === 'calculator'
                 ? 'border-blue-600 text-blue-600 dark:text-blue-400 dark:border-blue-400'
                 : 'border-transparent text-slate-500 hover:text-slate-700 hover:border-slate-300 dark:text-slate-400 dark:hover:text-slate-300'
@@ -363,7 +363,7 @@ export default function CalculatorEngine({ slug, lang = 'es' }: CalculatorEngine
           </button>
           <button
             onClick={() => setActiveTab('explanation')}
-            className={`py-4 px-1 border-b-2 font-medium text-sm transition-all duration-200 ${
+            className={`py-4 px-1 border-b-2 font-medium text-sm transition-all duration-200 whitespace-nowrap ${
               activeTab === 'explanation'
                 ? 'border-blue-600 text-blue-600 dark:text-blue-400 dark:border-blue-400'
                 : 'border-transparent text-slate-500 hover:text-slate-700 hover:border-slate-300 dark:text-slate-400 dark:hover:text-slate-300'
@@ -373,7 +373,7 @@ export default function CalculatorEngine({ slug, lang = 'es' }: CalculatorEngine
           </button>
           <button
             onClick={() => setActiveTab('faq')}
-            className={`py-4 px-1 border-b-2 font-medium text-sm transition-all duration-200 ${
+            className={`py-4 px-1 border-b-2 font-medium text-sm transition-all duration-200 whitespace-nowrap ${
               activeTab === 'faq'
                 ? 'border-blue-600 text-blue-600 dark:text-blue-400 dark:border-blue-400'
                 : 'border-transparent text-slate-500 hover:text-slate-700 hover:border-slate-300 dark:text-slate-400 dark:hover:text-slate-300'

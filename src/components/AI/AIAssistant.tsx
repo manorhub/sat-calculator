@@ -97,15 +97,15 @@ export default function AIAssistant({ activeCalculatorContext }: AIAssistantProp
       {!isOpen && (
         <button
           onClick={() => setIsOpen(true)}
-          className="fixed bottom-6 right-6 z-50 bg-gradient-to-r from-blue-600 to-indigo-700 hover:from-blue-700 hover:to-indigo-800 text-white p-4 rounded-full shadow-2xl flex items-center justify-center transition-all duration-300 hover:scale-110 active:scale-95 group"
+          className="fixed bottom-4 right-4 sm:bottom-6 sm:right-6 z-50 bg-gradient-to-r from-blue-600 to-indigo-700 hover:from-blue-700 hover:to-indigo-800 text-white p-3 rounded-full sm:rounded-2xl shadow-2xl flex items-center justify-center transition-all duration-300 hover:scale-110 active:scale-95 group w-12 h-12 sm:w-auto sm:h-auto"
           aria-label="Abrir Asistente Fiscal IA"
         >
-          <span className="relative flex h-3 w-3 mr-2">
+          <span className="absolute top-1 right-1 sm:relative sm:top-auto sm:right-auto flex h-2.5 w-2.5 sm:mr-2">
             <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
-            <span className="relative inline-flex rounded-full h-3 w-3 bg-emerald-500"></span>
+            <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-500"></span>
           </span>
-          <span className="font-bold text-sm mr-1">Asistente Fiscal IA</span>
-          <span className="text-lg">✨</span>
+          <span className="hidden sm:inline font-bold text-xs mr-1">Asistente Fiscal IA</span>
+          <span className="text-lg sm:text-base">✨</span>
         </button>
       )}
 

@@ -67,13 +67,13 @@ export default function Home({ params }: { params: Promise<{ lang: string }> }) 
     <div className="bg-slate-50 dark:bg-slate-950 min-h-screen text-slate-900 dark:text-slate-100 font-sans">
       {/* Navigation Header */}
       <header className="bg-white dark:bg-slate-900 border-b border-slate-200 dark:border-slate-800 py-4">
-        <div className="max-w-6xl mx-auto px-4 flex justify-between items-center">
-          <span className="font-extrabold text-xl text-slate-900 dark:text-white">
+        <div className="max-w-6xl mx-auto px-4 flex flex-col sm:flex-row justify-between items-center gap-4">
+          <Link href={lang === 'en' ? '/en' : '/'} className="font-extrabold text-xl text-slate-900 dark:text-white hover:opacity-90 transition">
             Calculadora<span className="text-blue-600">SAT</span>
-          </span>
-          <div className="flex items-center space-x-6">
-            <nav className="flex space-x-6">
-              <Link href={lang === 'en' ? '/en/calendario-fiscal' : '/calendario-fiscal'} className="text-sm font-bold text-slate-600 dark:text-slate-300 hover:text-blue-600 dark:hover:text-blue-400 transition flex items-center gap-1">
+          </Link>
+          <div className="flex items-center space-x-4 sm:space-x-6">
+            <nav className="flex space-x-4 sm:space-x-6">
+              <Link href={lang === 'en' ? '/en/calendario-fiscal' : '/calendario-fiscal'} className="text-sm font-bold text-slate-600 dark:text-slate-300 hover:text-blue-600 dark:hover:text-blue-400 transition flex items-center gap-1 whitespace-nowrap">
                 📅 {dict.nav.calendar}
               </Link>
             </nav>
@@ -261,7 +261,7 @@ export default function Home({ params }: { params: Promise<{ lang: string }> }) 
                   <Link
                     key={cat.slug}
                     href={`${lang === 'en' ? '/en' : ''}/calculadoras/${cat.slug}`}
-                    className="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl p-6 flex flex-col items-center text-center hover:shadow-md hover:border-blue-500 dark:hover:border-blue-400 hover:scale-[1.02] active:scale-[0.98] transition-all duration-200"
+                    className="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl p-4 sm:p-6 flex flex-col items-center text-center hover:shadow-md hover:border-blue-500 dark:hover:border-blue-400 hover:scale-[1.02] active:scale-[0.98] transition-all duration-200"
                   >
                     <span className="text-3xl mb-3">{cat.icon}</span>
                     <h3 className="font-bold text-slate-900 dark:text-white text-sm">
@@ -305,14 +305,14 @@ export default function Home({ params }: { params: Promise<{ lang: string }> }) 
 
       {/* Footer */}
       <footer className="bg-white dark:bg-slate-900 border-t border-slate-200 dark:border-slate-800 py-12">
-        <div className="max-w-6xl mx-auto px-4 flex flex-col md:flex-row justify-between items-center text-slate-500 text-sm">
+        <div className="max-w-6xl mx-auto px-4 flex flex-col md:flex-row justify-between items-center gap-6 text-slate-500 text-sm text-center md:text-left">
           <div className="mb-4 md:mb-0">
             <span className="font-extrabold text-slate-900 dark:text-white text-base">
               Calculadora<span className="text-blue-600">SAT</span>
             </span>
             <p className="mt-1">{dict.footer.rights} {dict.footer.disclaimer}</p>
           </div>
-          <div className="flex space-x-6">
+          <div className="flex flex-wrap justify-center md:justify-end gap-x-6 gap-y-3 mt-4 md:mt-0">
             <Link href={lang === 'en' ? '/en/calendario-fiscal' : '/calendario-fiscal'} className="hover:text-slate-700 transition font-bold text-blue-600 dark:text-blue-400">{dict.nav.calendar}</Link>
             <Link href={lang === 'en' ? '/en/developer' : '/developer'} className="hover:text-slate-700 transition font-bold text-indigo-600 dark:text-indigo-400">{dict.nav.developer}</Link>
             <Link href={lang === 'en' ? '/en/privacy' : '/privacy'} className="hover:text-slate-700 transition">{dict.footer.privacy}</Link>
