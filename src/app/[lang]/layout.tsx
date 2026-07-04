@@ -38,6 +38,7 @@ export default async function RootLayout({
       suppressHydrationWarning
     >
       <head>
+        <meta name="google-site-verification" content="rRetDb7bEgDlPVqH4e0hWvIB__PrqNCSr2FYbfXsZMM" />
         <SEOHreflang />
         <link
           rel="stylesheet"
