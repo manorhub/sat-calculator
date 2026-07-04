@@ -90,7 +90,7 @@ export default async function PrivacyPage({ params }: PageProps) {
 
               <h2 className="text-lg font-bold text-slate-900 dark:text-white">Data Protection Rights (GDPR / LFPDPPP)</h2>
               <p>
-                We want to make sure you are fully aware of all of your data protection rights. Every user is entitled to request rectification, erasure, restriction, or objection to the processing of any personal data collected through the technical support form by writing to us at <strong>privacy@calculadorasat.mx</strong>.
+                We want to make sure you are fully aware of all of your data protection rights. Every user is entitled to request rectification, erasure, restriction, or objection to the processing of any personal data collected through the technical support form by writing to us at <strong>fkdigitalmedia@gmail.com</strong>.
               </p>
             </div>
           </div>
@@ -179,7 +179,7 @@ export default async function PrivacyPage({ params }: PageProps) {
 
             <h2 className="text-lg font-bold text-slate-900 dark:text-white">Derechos de Protección de Datos (GDPR / LFPDPPP)</h2>
             <p>
-              Queremos asegurarnos de que estés completamente informado de todos tus derechos de protección de datos. Todo usuario tiene derecho a solicitar la rectificación, supresión, limitación u oposición del tratamiento de cualquier dato personal recopilado a través del formulario de soporte técnico escribiéndonos a <strong>privacy@calculadorasat.mx</strong>.
+              Queremos asegurarnos de que estés completamente informado de todos tus derechos de protección de datos. Todo usuario tiene derecho a solicitar la rectificación, supresión, limitación u oposición del tratamiento de cualquier dato personal recopilado a través del formulario de soporte técnico escribiéndonos a <strong>fkdigitalmedia@gmail.com</strong>.
             </p>
           </div>
         </div>

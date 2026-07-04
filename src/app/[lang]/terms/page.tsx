@@ -79,7 +79,7 @@ export default async function TermsPage({ params }: PageProps) {
 
               <h2 className="text-lg font-bold text-slate-900 dark:text-white">5. Contact</h2>
               <p>
-                For any legal clarification regarding our terms, you can contact us at <strong>legal@calculadorasat.mx</strong>.
+                For any legal clarification regarding our terms, you can contact us at <strong>fkdigitalmedia@gmail.com</strong>.
               </p>
             </div>
           </div>
@@ -157,7 +157,7 @@ export default async function TermsPage({ params }: PageProps) {
 
             <h2 className="text-lg font-bold text-slate-900 dark:text-white">5. Contacto</h2>
             <p>
-              Para cualquier aclaración legal sobre nuestros términos, puedes contactarnos en <strong>legal@calculadorasat.mx</strong>.
+              Para cualquier aclaración legal sobre nuestros términos, puedes contactarnos en <strong>fkdigitalmedia@gmail.com</strong>.
             </p>
           </div>
         </div>
