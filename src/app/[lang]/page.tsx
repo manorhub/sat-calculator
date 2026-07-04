@@ -17,6 +17,8 @@ export default function Home({ params }: { params: Promise<{ lang: string }> }) 
   const [searchQuery, setSearchQuery] = useState('');
   const [favoriteIds, setFavoriteIds] = useState<string[]>([]);
   const [recentCalculations, setRecentCalculations] = useState<any[]>([]);
+  const [recentPosts, setRecentPosts] = useState<any[]>([]);
+  const [loadingPosts, setLoadingPosts] = useState(true);
 
   React.useEffect(() => {
     if (typeof window !== 'undefined') {
@@ -27,6 +29,23 @@ export default function Home({ params }: { params: Promise<{ lang: string }> }) 
       setRecentCalculations(hist.slice(0, 3));
     }
   }, []);
+
+  React.useEffect(() => {
+    async function fetchRecentPosts() {
+      try {
+        const res = await fetch(`/api/posts?lang=${lang}`);
+        if (res.ok) {
+          const data = await res.json();
+          setRecentPosts(data.slice(0, 3));
+        }
+      } catch (err) {
+        console.error('Error fetching homepage posts:', err);
+      } finally {
+        setLoadingPosts(false);
+      }
+    }
+    fetchRecentPosts();
+  }, [lang]);
 
   const localizedCalculators = React.useMemo(() => {
     return calculators.map(calc => {
@@ -74,8 +93,11 @@ export default function Home({ params }: { params: Promise<{ lang: string }> }) 
           </Link>
           <div className="flex items-center gap-3 sm:gap-4">
             <nav className="flex space-x-4 sm:space-x-6">
-              <Link href={lang === 'en' ? '/en/calendario-fiscal' : '/calendario-fiscal'} className="text-sm font-bold text-slate-600 dark:text-slate-300 hover:text-blue-600 dark:hover:text-blue-400 transition flex items-center gap-1 whitespace-nowrap">
+              <Link href={lang === 'en' ? '/en/calendario-fiscal' : '/calendario-fiscal'} className="text-sm font-bold text-slate-600 dark:text-slate-350 hover:text-blue-600 dark:hover:text-blue-400 transition flex items-center gap-1 whitespace-nowrap">
                 📅 {dict.nav.calendar}
+              </Link>
+              <Link href={lang === 'en' ? '/en/blog' : '/blog'} className="text-sm font-bold text-slate-600 dark:text-slate-350 hover:text-blue-600 dark:hover:text-blue-400 transition flex items-center gap-1 whitespace-nowrap">
+                ✍️ {dict.nav.blog || 'Blog'}
               </Link>
             </nav>
             <ThemeToggle />
@@ -277,6 +299,61 @@ export default function Home({ params }: { params: Promise<{ lang: string }> }) 
               })}
             </div>
 
+            {/* Fiscal Updates & News Blog Section */}
+            {!loadingPosts && recentPosts.length > 0 && (
+              <div className="mb-16">
+                <div className="flex flex-row justify-between items-end mb-8">
+                  <div>
+                    <h2 className="text-3xl font-extrabold text-slate-950 dark:text-white">
+                      📢 {lang === 'en' ? 'Fiscal Updates & News' : 'Novedades y Noticias Fiscales'}
+                    </h2>
+                    <p className="text-slate-500 text-sm mt-1">
+                      {lang === 'en' ? 'Get the latest information about SAT regulations and calculators.' : 'Entérate de las últimas disposiciones del SAT y actualizaciones de nuestras herramientas.'}
+                    </p>
+                  </div>
+                  <Link
+                    href={lang === 'en' ? '/en/blog' : '/blog'}
+                    className="text-sm font-extrabold text-blue-600 dark:text-blue-450 hover:text-blue-800 dark:hover:text-blue-300 transition whitespace-nowrap flex items-center gap-1"
+                  >
+                    {lang === 'en' ? 'View all posts' : 'Ver todas las entradas'} ➔
+                  </Link>
+                </div>
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                  {recentPosts.map((post: any) => (
+                    <article
+                      key={post.id}
+                      className="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl p-6 shadow-sm hover:shadow-md hover:border-blue-500 dark:hover:border-blue-400 transition duration-200 flex flex-col justify-between"
+                    >
+                      <div>
+                        <div className="flex justify-between items-center text-xs font-bold text-slate-400 mb-3">
+                          <span className="text-blue-600 dark:text-blue-400 uppercase tracking-wider bg-blue-50 dark:bg-blue-950/30 px-2.5 py-0.5 rounded">
+                            {post.category}
+                          </span>
+                          <span>
+                            {new Date(post.date).toLocaleDateString(lang === 'en' ? 'en-US' : 'es-MX')}
+                          </span>
+                        </div>
+                        <h3 className="text-lg font-bold text-slate-950 dark:text-white leading-snug">
+                          <Link href={`${lang === 'en' ? '/en' : ''}/blog/${post.slug}`} className="hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
+                            {post.title}
+                          </Link>
+                        </h3>
+                        <p className="text-slate-550 dark:text-slate-400 text-sm mt-2 line-clamp-2">
+                          {post.excerpt}
+                        </p>
+                      </div>
+                      <Link
+                        href={`${lang === 'en' ? '/en' : ''}/blog/${post.slug}`}
+                        className="text-blue-600 dark:text-blue-400 text-xs font-extrabold mt-4 flex items-center gap-1 hover:underline"
+                      >
+                        {lang === 'en' ? 'Read More ➔' : 'Leer Más ➔'}
+                      </Link>
+                    </article>
+                  ))}
+                </div>
+              </div>
+            )}
+
             {/* AI Callout Section */}
             <div className="bg-gradient-to-r from-violet-600 to-indigo-700 text-white rounded-3xl p-8 sm:p-12 flex flex-col lg:flex-row items-center justify-between shadow-lg">
               <div className="max-w-xl text-center lg:text-left mb-6 lg:mb-0">
@@ -316,9 +393,10 @@ export default function Home({ params }: { params: Promise<{ lang: string }> }) 
             <p className="mt-1 text-slate-500 text-sm">{dict.footer.rights} {dict.footer.disclaimer}</p>
           </div>
           {/* Links: 2-column grid on mobile, single row on desktop */}
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:flex md:flex-row md:flex-wrap gap-y-3 gap-x-6 justify-center md:justify-start text-sm text-slate-500">
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:flex md:flex-row md:flex-wrap gap-y-3 gap-x-6 justify-center md:justify-start text-sm text-slate-550">
             <Link href={lang === 'en' ? '/en/calendario-fiscal' : '/calendario-fiscal'} className="hover:text-blue-600 transition font-bold text-blue-600 dark:text-blue-400 truncate">{dict.nav.calendar}</Link>
-            <Link href={lang === 'en' ? '/en/developer' : '/developer'} className="hover:text-indigo-700 transition font-bold text-indigo-600 dark:text-indigo-400 truncate">{dict.nav.developer}</Link>
+            <Link href={lang === 'en' ? '/en/blog' : '/blog'} className="hover:text-blue-600 transition font-bold text-blue-600 dark:text-blue-400 truncate">{dict.nav.blog || 'Blog'}</Link>
+            <Link href={lang === 'en' ? '/en/developer' : '/developer'} className="hover:text-indigo-750 transition font-bold text-indigo-600 dark:text-indigo-400 truncate">{dict.nav.developer}</Link>
             <Link href={lang === 'en' ? '/en/privacy' : '/privacy'} className="hover:text-slate-700 transition truncate">{dict.footer.privacy}</Link>
             <Link href={lang === 'en' ? '/en/terms' : '/terms'} className="hover:text-slate-700 transition truncate">{dict.footer.terms}</Link>
             <Link href={lang === 'en' ? '/en/about' : '/about'} className="hover:text-slate-700 transition truncate">{dict.nav.about}</Link>
