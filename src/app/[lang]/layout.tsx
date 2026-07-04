@@ -3,6 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "../globals.css";
 import CookieBanner from "../../components/CookieBanner";
 import SEOHreflang from "../../components/SEO/SEOHreflang";
+import ThemeProvider from "../../components/ThemeProvider";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -33,6 +34,7 @@ export default async function RootLayout({
     <html
       lang={lang}
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
+      suppressHydrationWarning
     >
       <head>
         <SEOHreflang />
@@ -42,9 +44,12 @@ export default async function RootLayout({
         />
       </head>
       <body className="min-h-full flex flex-col">
-        {children}
-        <CookieBanner />
+        <ThemeProvider>
+          {children}
+          <CookieBanner />
+        </ThemeProvider>
       </body>
     </html>
   );
 }
+

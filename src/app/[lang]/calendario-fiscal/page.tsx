@@ -3,6 +3,7 @@
 import React, { useState, use } from 'react';
 import Link from 'next/link';
 import LanguageSelector from '../../../components/LanguageSelector';
+import ThemeToggle from '../../../components/ThemeToggle';
 
 interface PageProps {
   params: Promise<{
@@ -207,6 +208,7 @@ export default function CalendarioFiscal({ params }: PageProps) {
             <Link href={lang === 'en' ? '/en' : '/'} className="text-sm font-semibold text-blue-600 dark:text-blue-400 hover:underline whitespace-nowrap">
               {lang === 'en' ? '← Back to Calculators' : '← Regresar a Calculadoras'}
             </Link>
+            <ThemeToggle />
             <LanguageSelector />
           </div>
         </div>

@@ -3,6 +3,7 @@
 import React, { useState, use } from 'react';
 import Link from 'next/link';
 import LanguageSelector from '../../../components/LanguageSelector';
+import ThemeToggle from '../../../components/ThemeToggle';
 
 export default function ContactPage({ params }: { params: Promise<{ lang: string }> }) {
   const resolvedParams = use(params);
@@ -34,6 +35,7 @@ export default function ContactPage({ params }: { params: Promise<{ lang: string
                 <Link href="/en" className="text-sm font-semibold text-blue-600 dark:text-blue-400 hover:underline whitespace-nowrap">
                   ← Back to Home
                 </Link>
+                <ThemeToggle />
                 <LanguageSelector />
               </div>
             </div>
@@ -199,6 +201,7 @@ export default function ContactPage({ params }: { params: Promise<{ lang: string
               <Link href="/" className="text-sm font-semibold text-blue-600 dark:text-blue-400 hover:underline whitespace-nowrap">
                 ← Volver al Inicio
               </Link>
+              <ThemeToggle />
               <LanguageSelector />
             </div>
           </div>

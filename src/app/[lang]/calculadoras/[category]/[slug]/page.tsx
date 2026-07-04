@@ -5,6 +5,7 @@ import CalculatorEngine from '../../../../../components/CalculatorEngine';
 import RichSnippets from '../../../../../components/SEO/RichSnippets';
 import AIAssistant from '../../../../../components/AI/AIAssistant';
 import LanguageSelector from '../../../../../components/LanguageSelector';
+import ThemeToggle from '../../../../../components/ThemeToggle';
 import Link from 'next/link';
 
 interface PageProps {
@@ -85,7 +86,10 @@ export default async function CalculatorPage({ params }: PageProps) {
             {calculator.title}
           </span>
         </nav>
-        <LanguageSelector />
+        <div className="flex items-center gap-3">
+          <ThemeToggle />
+          <LanguageSelector />
+        </div>
       </div>
 
       {/* Main Engine Component */}

@@ -3,6 +3,7 @@
 import React, { useState, use } from 'react';
 import Link from 'next/link';
 import LanguageSelector from '../../../components/LanguageSelector';
+import ThemeToggle from '../../../components/ThemeToggle';
 
 interface PageProps {
   params: Promise<{
@@ -90,6 +91,7 @@ console.log(data);`;
               <Link href="/en" className="text-sm font-semibold text-blue-400 hover:underline whitespace-nowrap">
                 ← Back to Portal
               </Link>
+              <ThemeToggle />
               <LanguageSelector />
             </div>
           </div>
@@ -234,6 +236,7 @@ console.log(data);`;
             <Link href="/" className="text-sm font-semibold text-blue-400 hover:underline whitespace-nowrap">
               ← Regresar al Portal
             </Link>
+            <ThemeToggle />
             <LanguageSelector />
           </div>
         </div>

@@ -4,6 +4,7 @@ import Link from 'next/link';
 import { getCalculatorsByCategory } from '../../../../calculators';
 import AIAssistant from '../../../../components/AI/AIAssistant';
 import LanguageSelector from '../../../../components/LanguageSelector';
+import ThemeToggle from '../../../../components/ThemeToggle';
 
 interface PageProps {
   params: Promise<{
@@ -199,6 +200,7 @@ export default async function CategoryPage({ params }: PageProps) {
                 📅 {lang === 'en' ? 'Tax Calendar' : 'Calendario Fiscal'}
               </Link>
             </nav>
+            <ThemeToggle />
             <LanguageSelector />
           </div>
         </div>

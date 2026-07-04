@@ -5,6 +5,7 @@ import Link from 'next/link';
 import { calculators } from '../../calculators';
 import AIAssistant from '../../components/AI/AIAssistant';
 import LanguageSelector from '../../components/LanguageSelector';
+import ThemeToggle from '../../components/ThemeToggle';
 import esDict from '../../dictionaries/es.json';
 import enDict from '../../dictionaries/en.json';
 
@@ -71,12 +72,13 @@ export default function Home({ params }: { params: Promise<{ lang: string }> }) 
           <Link href={lang === 'en' ? '/en' : '/'} className="font-extrabold text-xl text-slate-900 dark:text-white hover:opacity-90 transition">
             Calculadora<span className="text-blue-600">SAT</span>
           </Link>
-          <div className="flex items-center space-x-4 sm:space-x-6">
+          <div className="flex items-center gap-3 sm:gap-4">
             <nav className="flex space-x-4 sm:space-x-6">
               <Link href={lang === 'en' ? '/en/calendario-fiscal' : '/calendario-fiscal'} className="text-sm font-bold text-slate-600 dark:text-slate-300 hover:text-blue-600 dark:hover:text-blue-400 transition flex items-center gap-1 whitespace-nowrap">
                 📅 {dict.nav.calendar}
               </Link>
             </nav>
+            <ThemeToggle />
             <LanguageSelector />
           </div>
         </div>

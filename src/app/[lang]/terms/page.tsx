@@ -1,6 +1,7 @@
 import React from 'react';
 import Link from 'next/link';
 import LanguageSelector from '../../../components/LanguageSelector';
+import ThemeToggle from '../../../components/ThemeToggle';
 
 interface PageProps {
   params: Promise<{
@@ -24,6 +25,7 @@ export default async function TermsPage({ params }: PageProps) {
               <Link href="/en" className="text-sm font-semibold text-blue-600 dark:text-blue-400 hover:underline whitespace-nowrap">
                 ← Back to Home
               </Link>
+              <ThemeToggle />
               <LanguageSelector />
             </div>
           </div>
@@ -101,6 +103,7 @@ export default async function TermsPage({ params }: PageProps) {
             <Link href="/" className="text-sm font-semibold text-blue-600 dark:text-blue-400 hover:underline whitespace-nowrap">
               ← Volver al Inicio
             </Link>
+            <ThemeToggle />
             <LanguageSelector />
           </div>
         </div>
