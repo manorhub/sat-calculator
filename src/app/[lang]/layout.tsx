@@ -40,6 +40,11 @@ export default async function RootLayout({
       <head>
         <meta name="google-site-verification" content="rRetDb7bEgDlPVqH4e0hWvIB__PrqNCSr2FYbfXsZMM" />
         <SEOHreflang />
+        <script
+          async
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9602707669345879"
+          crossOrigin="anonymous"
+        ></script>
       </head>
       <body className="min-h-full flex flex-col">
         {/* Google Analytics (gtag.js) */}
