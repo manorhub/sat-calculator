@@ -1,11 +1,12 @@
 import type { MetadataRoute } from 'next';
 import { calculators } from '@/calculators';
+import posts from '@/data/posts.json';
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const domain = 'https://www.calculadorasat.org';
   const currentDate = new Date();
 
-  // 1. Static routes
+  // 1. Static & Cluster routes
   const staticPaths = [
     '',
     'about',
@@ -14,6 +15,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     'privacy',
     'terms',
     'calendario-fiscal',
+    'blog',
+    'llms.txt',
     'tipo-de-cambio-sunat',
     'tipo-de-cambio-para-solventar-obligaciones',
     'calculadora-dolares-a-soles',
@@ -27,8 +30,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     return {
       url: `${domain}${segment}`,
       lastModified: currentDate,
-      changeFrequency: 'monthly' as const,
-      priority: path === '' ? 1.0 : 0.8,
+      changeFrequency: (path === '' || path === 'tipo-de-cambio-sunat') ? ('daily' as const) : ('weekly' as const),
+      priority: path === '' ? 1.0 : (path.includes('tipo-de-cambio-sunat') ? 0.9 : 0.8),
       alternates: {
         languages: {
           es: `${domain}${segment}`,
@@ -39,7 +42,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
   });
 
   // 2. Category routes
-  // Extract unique category slugs from calculators
   const uniqueCategories = Array.from(
     new Set(calculators.map((calc) => calc.categorySlug))
   );
@@ -77,5 +79,23 @@ export default function sitemap(): MetadataRoute.Sitemap {
     };
   });
 
-  return [...staticEntries, ...categoryEntries, ...calculatorEntries];
+  // 4. Blog post routes
+  const publishedPosts = (posts as any[]).filter(p => p.status === 'published');
+  const blogEntries = publishedPosts.map((post) => {
+    const segment = `/blog/${post.slug}`;
+    return {
+      url: `${domain}${segment}`,
+      lastModified: new Date(post.date || currentDate),
+      changeFrequency: 'monthly' as const,
+      priority: 0.7,
+      alternates: {
+        languages: {
+          es: `${domain}${segment}`,
+          en: `${domain}/en${segment}`,
+        },
+      },
+    };
+  });
+
+  return [...staticEntries, ...categoryEntries, ...calculatorEntries, ...blogEntries];
 }

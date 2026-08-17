@@ -1,0 +1,54 @@
+# Calculadora SAT & Herramientas Fiscales / Financieras
+
+> Calculadora SAT (calculadorasat.org) es una plataforma gratuita de herramientas fiscales, contables, financieras y conversiones de tipo de cambio para México (SAT / Banxico) y Perú (SUNAT).
+
+## Cluster SUNAT Perú (Dólar, Soles, UIT, RUC)
+
+- [/tipo-de-cambio-sunat](https://calculadorasat.org/tipo-de-cambio-sunat): Tipo de Cambio SUNAT de Hoy. Consulta la cotización de compra y venta oficial USD/PEN en Perú, conversor dinámico e histórico de tasas.
+- [/tipo-de-cambio-para-solventar-obligaciones](https://calculadorasat.org/tipo-de-cambio-para-solventar-obligaciones): Calculadora del tipo de cambio oficial para cancelar tributos y obligaciones financieras en moneda extranjera según el Código Tributario de Perú.
+- [/calculadora-dolares-a-soles](https://calculadorasat.org/calculadora-dolares-a-soles): Convertidor de Dólares estadounidenses (USD) a Soles peruanos (PEN) con tasa SUNAT oficial o tasa comercial personalizada.
+- [/calculadora-soles-a-dolares](https://calculadorasat.org/calculadora-soles-a-dolares): Convertidor de Soles peruanos (PEN) a Dólares estadounidenses (USD) con tasa SUNAT o personalizada.
+- [/consulta-ruc-sunat](https://calculadorasat.org/consulta-ruc-sunat): Guía de consulta de RUC ante la SUNAT y validador de estructura de 11 dígitos con algoritmo Módulo 11.
+- [/tablas-e-indicadores-sunat](https://calculadorasat.org/tablas-e-indicadores-sunat): Tablas oficiales e indicadores tributarios de Perú, histórico de la UIT (2023-2026: S/ 5,350 en 2026) y escalas del Impuesto a la Renta.
+
+## Herramientas Fiscales SAT México
+
+- [/calculadoras/sat/calculadora-iva](https://calculadorasat.org/calculadoras/sat/calculadora-iva): Calculadora de IVA México (Agregar, Desglosar 16%, 8% frontera, retenciones).
+- [/calculadoras/sat/calculadora-isr-pf](https://calculadorasat.org/calculadoras/sat/calculadora-isr-pf): Calculadora de ISR Personas Físicas con tablas del SAT actualizadas.
+- [/calculadoras/sat/calculadora-resico](https://calculadorasat.org/calculadoras/sat/calculadora-resico): Calculadora de RESICO (Régimen Simplificado de Confianza 1% a 2.5%).
+- [/calculadoras/sat/calculadora-resico-vs-actividad](https://calculadorasat.org/calculadoras/sat/calculadora-resico-vs-actividad): Comparador de ISR RESICO vs Actividad Empresarial y Profesional.
+- [/calculadoras/sat/calculadora-isr-pm](https://calculadorasat.org/calculadoras/sat/calculadora-isr-pm): Calculadora de Pagos Provisionales de ISR Persona Moral.
+- [/calculadoras/sat/calculadora-conversion-impuestos](https://calculadorasat.org/calculadoras/sat/calculadora-conversion-impuestos): Calculadora Gross-up (De Neto a Bruto con Retenciones de ISR e IVA).
+- [/calculadoras/sat/calculadora-recargos-sat](https://calculadorasat.org/calculadoras/sat/calculadora-recargos-sat): Calculadora de Recargos y Actualizaciones por Pago Extemporáneo ante el SAT.
+
+## Nómina y Seguridad Social (LFT e IMSS)
+
+- [/calculadoras/nomina/calculadora-salario-neto](https://calculadorasat.org/calculadoras/nomina/calculadora-salario-neto): Calculadora de Salario Neto quincenal/mensual y retenciones ISR/IMSS.
+- [/calculadoras/nomina/calculadora-aguinaldo](https://calculadorasat.org/calculadoras/nomina/calculadora-aguinaldo): Calculadora de Aguinaldo proporcional o completo según Ley Federal del Trabajo.
+- [/calculadoras/nomina/calculadora-finiquito](https://calculadorasat.org/calculadoras/nomina/calculadora-finiquito): Simulación de Finiquito y Liquidación por renuncia o despido.
+- [/calculadoras/nomina/calculadora-vacaciones](https://calculadorasat.org/calculadoras/nomina/calculadora-vacaciones): Calculadora de Días de Vacaciones Dignas y Prima Vacacional.
+- [/calculadoras/nomina/calculadora-ptu](https://calculadorasat.org/calculadoras/nomina/calculadora-ptu): Calculadora de Reparto de Utilidades (PTU).
+- [/calculadoras/nomina/calculadora-horas-extra](https://calculadorasat.org/calculadoras/nomina/calculadora-horas-extra): Calculadora de Horas Extra dobles, triples y prima dominical.
+
+## Finanzas, Créditos e Inversiones
+
+- [/calculadoras/inversiones/calculadora-cetes](https://calculadorasat.org/calculadoras/inversiones/calculadora-cetes): Calculadora de Rendimientos en CETES Directo.
+- [/calculadoras/creditos/calculadora-credito-hipotecario](https://calculadorasat.org/calculadoras/creditos/calculadora-credito-hipotecario): Calculadora de Amortización de Crédito Hipotecario.
+- [/calculadoras/creditos/calculadora-prestamo-personal](https://calculadorasat.org/calculadoras/creditos/calculadora-prestamo-personal): Calculadora de Préstamo Personal y Tabla de Amortización.
+- [/calculadoras/finanzas-personales/calculadora-interes-compuesto](https://calculadorasat.org/calculadoras/finanzas-personales/calculadora-interes-compuesto): Calculadora de Interés Compuesto.
+- [/calculadoras/finanzas-personales/calculadora-regla-50-30-20](https://calculadorasat.org/calculadoras/finanzas-personales/calculadora-regla-50-30-20): Calculadora de Presupuesto Regla 50/30/20.
+- [/calculadoras/finanzas-personales/calculadora-afore](https://calculadorasat.org/calculadoras/finanzas-personales/calculadora-afore): Proyección de Saldo y Pensión en AFORE.
+- [/calculadoras/conversiones/calculadora-tipo-de-cambio](https://calculadorasat.org/calculadoras/conversiones/calculadora-tipo-de-cambio): Tipo de Cambio FIX Banxico / DOF (USD / MXN).
+- [/calculadoras/conversiones/calculadora-uma](https://calculadorasat.org/calculadoras/conversiones/calculadora-uma): Calculadora de Valor de UMA (Diaria, Mensual, Anual).
+- [/calculadoras/contabilidad/calculadora-depreciacion-activos](https://calculadorasat.org/calculadoras/contabilidad/calculadora-depreciacion-activos): Depreciación Contable y Fiscal de Activos Fijos.
+- [/calculadoras/negocios/calculadora-punto-equilibrio](https://calculadorasat.org/calculadoras/negocios/calculadora-punto-equilibrio): Calculadora de Punto de Equilibrio Financiero.
+
+## Información General y Servicios
+
+- [/calendario-fiscal](https://calculadorasat.org/calendario-fiscal): Calendario de vencimientos tributarios mensuales y anuales del SAT.
+- [/developer](https://calculadorasat.org/developer): Documentación de la API para integradores y desarrolladores.
+
+## API Endpoints
+
+- `POST https://calculadorasat.org/api/calculate`: Ejecución de motores de cálculo fiscal y financiero.
+- `GET https://calculadorasat.org/api/sunat-exchange-rate`: API pública del tipo de cambio SUNAT en tiempo real (`compra`, `venta`, `fecha`, `isCached`, `history`).
