@@ -28,6 +28,8 @@ import { calculadoraDolaresASolesCalculator } from './conversiones/calculadora-d
 import { calculadoraSolesADolaresCalculator } from './conversiones/calculadora-soles-a-dolares';
 import { consultaRucSunatCalculator } from './conversiones/consulta-ruc-sunat';
 import { tablasEIndicadoresSunatCalculator } from './conversiones/tablas-e-indicadores-sunat';
+import { dolarHoyCalculator } from './conversiones/dolar-hoy';
+import { precioDelDolarEnPeruCalculator } from './conversiones/precio-del-dolar-en-peru';
 
 export const calculators: CalculatorConfig[] = [
   ivaCalculator,
@@ -54,6 +56,8 @@ export const calculators: CalculatorConfig[] = [
   calculadoraSolesADolaresCalculator,
   consultaRucSunatCalculator,
   tablasEIndicadoresSunatCalculator,
+  dolarHoyCalculator,
+  precioDelDolarEnPeruCalculator,
   depreciacionCalculator,
   aforeCalculator,
   horasExtraCalculator,

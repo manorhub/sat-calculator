@@ -298,6 +298,28 @@ if (uitCalc) {
   failedTests++;
 }
 
+// 22. Test Dólar Hoy en Perú
+const dolarHoyCalc = calculators.find(c => c.id === 'dolar-hoy-peru');
+if (dolarHoyCalc) {
+  const res = dolarHoyCalc.calculate({ monto_dolar: 500, tasa_mercado: 3.75 });
+  const totalSoles = res.results.find(r => r.isMain)?.value;
+  assert(totalSoles === 1875, 'Dólar Hoy: $500 USD a tasa 3.75 equivalen a S/ 1,875 PEN');
+} else {
+  console.error('No se encontró la calculadora de Dólar Hoy.');
+  failedTests++;
+}
+
+// 23. Test Precio del Dólar en Perú
+const precioDolarCalc = calculators.find(c => c.id === 'precio-del-dolar-en-peru');
+if (precioDolarCalc) {
+  const res = precioDolarCalc.calculate({ monto_precio: 100 });
+  const total = res.results.find(r => r.isMain)?.value;
+  assert(total === 375, 'Precio del Dólar: $100 USD a tasa 3.75 son S/ 375 PEN');
+} else {
+  console.error('No se encontró la calculadora de Precio del Dólar.');
+  failedTests++;
+}
+
 console.log(`\n========================================`);
 console.log(`RESULTADOS DE LAS PRUEBAS UNITARIAS:`);
 console.log(`PASARON: ${passedTests} de ${passedTests + failedTests}`);

@@ -1,14 +1,17 @@
 # Calculadora SAT & Herramientas Fiscales / Financieras
 
-> Calculadora SAT (calculadorasat.org) es una plataforma gratuita de herramientas fiscales, contables, financieras y conversiones de tipo de cambio para México (SAT / Banxico) y Perú (SUNAT).
+> Calculadora SAT (calculadorasat.org) es una plataforma gratuita de herramientas fiscales, contables, financieras y conversiones de tipo de cambio para México (SAT / Banxico) y Perú (SUNAT / Mercado Interbancario).
 
-## Cluster SUNAT Perú (Dólar, Soles, UIT, RUC)
+## Cluster Dólar & Tipo de Cambio Perú
 
-- [/tipo-de-cambio-sunat](https://calculadorasat.org/tipo-de-cambio-sunat): Tipo de Cambio SUNAT de Hoy. Consulta la cotización de compra y venta oficial USD/PEN en Perú, conversor dinámico e histórico de tasas.
-- [/tipo-de-cambio-para-solventar-obligaciones](https://calculadorasat.org/tipo-de-cambio-para-solventar-obligaciones): Calculadora del tipo de cambio oficial para cancelar tributos y obligaciones financieras en moneda extranjera según el Código Tributario de Perú.
-- [/calculadora-dolares-a-soles](https://calculadorasat.org/calculadora-dolares-a-soles): Convertidor de Dólares estadounidenses (USD) a Soles peruanos (PEN) con tasa SUNAT oficial o tasa comercial personalizada.
-- [/calculadora-soles-a-dolares](https://calculadorasat.org/calculadora-soles-a-dolares): Convertidor de Soles peruanos (PEN) a Dólares estadounidenses (USD) con tasa SUNAT o personalizada.
-- [/consulta-ruc-sunat](https://calculadorasat.org/consulta-ruc-sunat): Guía de consulta de RUC ante la SUNAT y validador de estructura de 11 dígitos con algoritmo Módulo 11.
+- [/dolar-hoy](https://calculadorasat.org/dolar-hoy): Dólar Hoy en Perú. Cotización de compra y venta en tiempo real del mercado interbancario, tipo de cambio SUNAT oficial, convertidor instantáneo USD/PEN y gráfico histórico.
+- [/precio-del-dolar-en-peru](https://calculadorasat.org/precio-del-dolar-en-peru): Precio del Dólar en Perú Hoy. Cotización USD/PEN, factores macroeconómicos (cobre, intervenciones BCRP, decisiones de la Fed) y análisis cambiario.
+- [/tipo-de-cambio](https://calculadorasat.org/tipo-de-cambio): Tipo de Cambio Hoy en Perú. Guía completa sobre el funcionamiento del mercado cambiario, diferencia entre compra/venta y cotización SUNAT.
+- [/tipo-de-cambio-sunat](https://calculadorasat.org/tipo-de-cambio-sunat): Tipo de Cambio SUNAT Hoy. Cotización oficial de compra y venta fijada por la SUNAT en Perú, datos históricos e impuestos.
+- [/dolares-a-soles](https://calculadorasat.org/dolares-a-soles): Calculadora Dólares a Soles (USD a PEN) con tasa de mercado, SUNAT o personalizada.
+- [/soles-a-dolares](https://calculadorasat.org/soles-a-dolares): Calculadora Soles a Dólares (PEN a USD) con tasa de mercado, SUNAT o personalizada.
+- [/tipo-de-cambio-para-solventar-obligaciones](https://calculadorasat.org/tipo-de-cambio-para-solventar-obligaciones): Calculadora del tipo de cambio legal para cancelar deudas y tributos en moneda extranjera según el Código Tributario peruano.
+- [/consulta-ruc-sunat](https://calculadorasat.org/consulta-ruc-sunat): Guía de consulta de RUC ante la SUNAT y validador de 11 dígitos con algoritmo Módulo 11.
 - [/tablas-e-indicadores-sunat](https://calculadorasat.org/tablas-e-indicadores-sunat): Tablas oficiales e indicadores tributarios de Perú, histórico de la UIT (2023-2026: S/ 5,350 en 2026) y escalas del Impuesto a la Renta.
 
 ## Herramientas Fiscales SAT México
@@ -51,4 +54,4 @@
 ## API Endpoints
 
 - `POST https://calculadorasat.org/api/calculate`: Ejecución de motores de cálculo fiscal y financiero.
-- `GET https://calculadorasat.org/api/sunat-exchange-rate`: API pública del tipo de cambio SUNAT en tiempo real (`compra`, `venta`, `fecha`, `isCached`, `history`).
+- `GET https://calculadorasat.org/api/sunat-exchange-rate`: API pública del tipo de cambio SUNAT en tiempo real.
