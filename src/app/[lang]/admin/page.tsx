@@ -37,6 +37,11 @@ export default function AdminPage({ params }: { params: Promise<{ lang: string }
   // Notification State
   const [notification, setNotification] = useState<{ message: string; type: 'success' | 'error' } | null>(null);
 
+  // SUNAT Monitoring State
+  const [sunatStatus, setSunatStatus] = useState<any>(null);
+  const [loadingSunat, setLoadingSunat] = useState(false);
+  const [refreshingSunat, setRefreshingSunat] = useState(false);
+
   // Load auth token on mount
   useEffect(() => {
     if (typeof window !== 'undefined') {
@@ -47,12 +52,46 @@ export default function AdminPage({ params }: { params: Promise<{ lang: string }
     }
   }, []);
 
-  // Fetch posts when authenticated
+  // Fetch posts and SUNAT status when authenticated
   useEffect(() => {
     if (authToken) {
       fetchDashboardPosts();
+      fetchSunatStatus();
     }
   }, [authToken]);
+
+  const fetchSunatStatus = async () => {
+    setLoadingSunat(true);
+    try {
+      const res = await fetch('/api/sunat-exchange-rate');
+      if (res.ok) {
+        const json = await res.json();
+        setSunatStatus(json.adminStatus);
+      }
+    } catch (err) {
+      console.error('Error loading SUNAT status:', err);
+    } finally {
+      setLoadingSunat(false);
+    }
+  };
+
+  const handleRefreshSunat = async () => {
+    setRefreshingSunat(true);
+    try {
+      const res = await fetch('/api/sunat-exchange-rate', { method: 'POST' });
+      const json = await res.json();
+      if (json.success) {
+        setSunatStatus(json.adminStatus);
+        showNotification(lang === 'en' ? 'SUNAT exchange rate updated successfully!' : '¡Tipo de cambio SUNAT actualizado correctamente!', 'success');
+      } else {
+        throw new Error(json.error || 'Update failed');
+      }
+    } catch (err: any) {
+      showNotification(err.message || 'Error updating SUNAT rate', 'error');
+    } finally {
+      setRefreshingSunat(false);
+    }
+  };
 
   // Handle Notifications auto-dismiss
   useEffect(() => {
@@ -862,6 +901,101 @@ export default function AdminPage({ params }: { params: Promise<{ lang: string }
                   ⚙️
                 </div>
               </div>
+            </div>
+
+            {/* SUNAT Exchange Rate Monitoring Card */}
+            <div className="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-3xl p-6 shadow-sm">
+              <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 mb-4 pb-4 border-b border-slate-100 dark:border-slate-800">
+                <div className="flex items-center gap-3">
+                  <div className="w-10 h-10 rounded-xl bg-blue-50 dark:bg-blue-950/60 text-blue-600 dark:text-blue-400 flex items-center justify-center text-xl font-bold">
+                    🇵🇪
+                  </div>
+                  <div>
+                    <h3 className="font-extrabold text-slate-950 dark:text-white text-lg">
+                      {lang === 'en' ? 'SUNAT Exchange Rate Monitor' : 'Monitoreo de Tipo de Cambio SUNAT'}
+                    </h3>
+                    <p className="text-xs text-slate-500 dark:text-slate-400">
+                      {lang === 'en' ? 'Real-time status of Peru SUNAT exchange rate integration.' : 'Estado en tiempo real de la integración del tipo de cambio SUNAT Perú.'}
+                    </p>
+                  </div>
+                </div>
+
+                <button
+                  onClick={handleRefreshSunat}
+                  disabled={refreshingSunat}
+                  className="px-4 py-2 rounded-xl bg-blue-600 hover:bg-blue-700 disabled:opacity-50 text-white font-bold text-xs shadow-md transition flex items-center gap-2"
+                >
+                  <span className={refreshingSunat ? 'animate-spin' : ''}>🔄</span>
+                  <span>{refreshingSunat ? (lang === 'en' ? 'Refreshing...' : 'Actualizando...') : (lang === 'en' ? 'Force Refresh Rate' : 'Actualizar Tipo de Cambio')}</span>
+                </button>
+              </div>
+
+              {sunatStatus ? (
+                <div className="grid grid-cols-2 sm:grid-cols-4 md:grid-cols-7 gap-4 text-xs">
+                  <div className="p-3 bg-slate-50 dark:bg-slate-950 rounded-xl border border-slate-200/60 dark:border-slate-850">
+                    <span className="text-slate-500 font-bold block mb-1">Tasa Compra</span>
+                    <strong className="text-sm text-slate-900 dark:text-white">
+                      {sunatStatus.currentRate?.compra ? `S/ ${sunatStatus.currentRate.compra.toFixed(3)}` : 'N/A'}
+                    </strong>
+                  </div>
+
+                  <div className="p-3 bg-slate-50 dark:bg-slate-950 rounded-xl border border-slate-200/60 dark:border-slate-850">
+                    <span className="text-slate-500 font-bold block mb-1">Tasa Venta</span>
+                    <strong className="text-sm text-slate-900 dark:text-white">
+                      {sunatStatus.currentRate?.venta ? `S/ ${sunatStatus.currentRate.venta.toFixed(3)}` : 'N/A'}
+                    </strong>
+                  </div>
+
+                  <div className="p-3 bg-slate-50 dark:bg-slate-950 rounded-xl border border-slate-200/60 dark:border-slate-850">
+                    <span className="text-slate-500 font-bold block mb-1">Tasa Anterior</span>
+                    <strong className="text-xs text-slate-700 dark:text-slate-300">
+                      {sunatStatus.previousRate ? `C: S/${sunatStatus.previousRate.compra} V: S/${sunatStatus.previousRate.venta}` : 'N/A'}
+                    </strong>
+                  </div>
+
+                  <div className="p-3 bg-slate-50 dark:bg-slate-950 rounded-xl border border-slate-200/60 dark:border-slate-850">
+                    <span className="text-slate-500 font-bold block mb-1">Fuente de Datos</span>
+                    <span className="font-semibold text-slate-800 dark:text-slate-200 truncate block">
+                      {sunatStatus.dataSource || 'SUNAT API'}
+                    </span>
+                  </div>
+
+                  <div className="p-3 bg-slate-50 dark:bg-slate-950 rounded-xl border border-slate-200/60 dark:border-slate-850">
+                    <span className="text-slate-500 font-bold block mb-1">Estado API</span>
+                    <span className={`inline-flex items-center px-2 py-0.5 rounded font-extrabold text-[11px] ${
+                      sunatStatus.apiStatus === 'OK' 
+                        ? 'bg-emerald-100 text-emerald-800 dark:bg-emerald-950 dark:text-emerald-300' 
+                        : 'bg-rose-100 text-rose-800 dark:bg-rose-950 dark:text-rose-300'
+                    }`}>
+                      {sunatStatus.apiStatus}
+                    </span>
+                  </div>
+
+                  <div className="p-3 bg-slate-50 dark:bg-slate-950 rounded-xl border border-slate-200/60 dark:border-slate-850">
+                    <span className="text-slate-500 font-bold block mb-1">Estado Caché</span>
+                    <span className="font-semibold text-slate-800 dark:text-slate-200 block">
+                      {sunatStatus.cacheStatus} ({sunatStatus.cacheAgeSeconds}s)
+                    </span>
+                  </div>
+
+                  <div className="p-3 bg-slate-50 dark:bg-slate-950 rounded-xl border border-slate-200/60 dark:border-slate-850">
+                    <span className="text-slate-500 font-bold block mb-1">Último Éxito</span>
+                    <span className="text-[11px] text-slate-700 dark:text-slate-300 block truncate">
+                      {sunatStatus.lastSuccessfulUpdate ? new Date(sunatStatus.lastSuccessfulUpdate).toLocaleTimeString() : 'N/A'}
+                    </span>
+                  </div>
+                </div>
+              ) : (
+                <div className="py-4 text-center text-xs text-slate-400">
+                  {loadingSunat ? 'Cargando estado del servicio SUNAT...' : 'Información no disponible.'}
+                </div>
+              )}
+
+              {sunatStatus?.lastApiError && (
+                <div className="mt-3 p-2.5 rounded-xl bg-rose-50 dark:bg-rose-950/40 border border-rose-200 text-rose-700 dark:text-rose-300 text-xs font-medium">
+                  ⚠️ Último Error API: {sunatStatus.lastApiError}
+                </div>
+              )}
             </div>
 
             {/* Control Bar: Search & Filters */}

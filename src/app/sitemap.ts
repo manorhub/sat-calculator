@@ -14,6 +14,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     'privacy',
     'terms',
     'calendario-fiscal',
+    'tipo-de-cambio-sunat',
+    'tipo-de-cambio-para-solventar-obligaciones',
+    'calculadora-dolares-a-soles',
+    'calculadora-soles-a-dolares',
+    'consulta-ruc-sunat',
+    'tablas-e-indicadores-sunat',
   ];
 
   const staticEntries = staticPaths.map((path) => {

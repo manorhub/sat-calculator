@@ -234,6 +234,70 @@ if (recargosCalc) {
   failedTests++;
 }
 
+// 17. Test Tipo de Cambio SUNAT
+const sunatCalc = calculators.find(c => c.id === 'calculo-tipo-de-cambio-sunat');
+if (sunatCalc) {
+  const resUsd = sunatCalc.calculate({ monto: 100, direccion: 'usd_to_pen', operacion: 'venta', tipo_cambio: 3.75 });
+  const penTotal = resUsd.results.find(r => r.isMain)?.value;
+  assert(penTotal === 375, 'SUNAT: 100 USD convertidos a PEN con tasa 3.75 son 375 Soles');
+
+  const resPen = sunatCalc.calculate({ monto: 375, direccion: 'pen_to_usd', operacion: 'compra', tipo_cambio: 3.75 });
+  const usdTotal = resPen.results.find(r => r.isMain)?.value;
+  assert(usdTotal === 100, 'SUNAT: 375 PEN convertidos a USD con tasa 3.75 son 100 Dólares');
+} else {
+  console.error('No se encontró la calculadora de Tipo de Cambio SUNAT.');
+  failedTests++;
+}
+
+// 18. Test Solventar Obligaciones
+const solventarCalc = calculators.find(c => c.id === 'calculo-tipo-cambio-solventar-obligaciones');
+if (solventarCalc) {
+  const res = solventarCalc.calculate({ monto: 1000, moneda_origen: 'USD', tipo_operacion: 'pago', tipo_cambio: 3.75 });
+  const total = res.results.find(r => r.isMain)?.value;
+  assert(total === 3750, 'Solventar Obligaciones: $1000 USD a 3.75 equivalen a S/ 3750 PEN');
+} else {
+  console.error('No se encontró la calculadora de Solventar Obligaciones.');
+  failedTests++;
+}
+
+// 19. Test Dólares a Soles & Soles a Dólares
+const dolaresSolesCalc = calculators.find(c => c.id === 'calculo-dolares-a-soles');
+const solesDolaresCalc = calculators.find(c => c.id === 'calculo-soles-a-dolares');
+if (dolaresSolesCalc && solesDolaresCalc) {
+  const res1 = dolaresSolesCalc.calculate({ monto: 200, modo_tasa: 'personalizado', tasa_custom: 3.80 });
+  const total1 = res1.results.find(r => r.isMain)?.value;
+  assert(total1 === 760, 'Dólares a Soles: 200 USD a tasa 3.80 son S/ 760');
+
+  const res2 = solesDolaresCalc.calculate({ monto: 760, modo_tasa: 'personalizado', tasa_custom: 3.80 });
+  const total2 = res2.results.find(r => r.isMain)?.value;
+  assert(total2 === 200, 'Soles a Dólares: S/ 760 a tasa 3.80 son $200 USD');
+} else {
+  console.error('No se encontraron las calculadoras de Dólares/Soles.');
+  failedTests++;
+}
+
+// 20. Test Consulta RUC Checksum Validation
+const rucCalc = calculators.find(c => c.id === 'consulta-ruc-sunat');
+if (rucCalc) {
+  const resValid = rucCalc.calculate({ ruc_input: '20100047218' });
+  const isValid = resValid.results.find(r => r.label === 'Estructura RUC')?.value;
+  assert(isValid === 1, 'Consulta RUC: Validó correctamente el checksum oficial de SUNAT para RUC 20100047218');
+} else {
+  console.error('No se encontró la calculadora de Consulta RUC.');
+  failedTests++;
+}
+
+// 21. Test Tablas e Indicadores SUNAT (UIT)
+const uitCalc = calculators.find(c => c.id === 'tablas-e-indicadores-sunat');
+if (uitCalc) {
+  const resUit = uitCalc.calculate({ cantidad_uit: 7, ano_uit: '2026' });
+  const totalSoles = resUit.results.find(r => r.isMain)?.value;
+  assert(totalSoles === 37450, 'Tablas e Indicadores: 7 UIT 2026 equivalen a S/ 37,450 (1 UIT = S/ 5,350)');
+} else {
+  console.error('No se encontró la calculadora de Tablas e Indicadores SUNAT.');
+  failedTests++;
+}
+
 console.log(`\n========================================`);
 console.log(`RESULTADOS DE LAS PRUEBAS UNITARIAS:`);
 console.log(`PASARON: ${passedTests} de ${passedTests + failedTests}`);

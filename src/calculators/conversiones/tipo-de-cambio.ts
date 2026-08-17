@@ -104,6 +104,7 @@ export const tipoCambioCalculator: CalculatorConfig = {
     ],
     tips: [
       'Al realizar tu declaración mensual, consulta el tipo de cambio histórico en la página oficial del Banco de México para asegurar que tus totales en pesos coincidan perfectamente con la legislación fiscal.',
+      'Si necesitas consultar el tipo de cambio oficial para operaciones contables en Perú, puedes utilizar la nueva herramienta de [tipo de cambio SUNAT](/tipo-de-cambio-sunat) para convertir dólares a soles.',
       'Si tienes una cuenta bancaria en dólares, los intereses y las ganancias cambiarias también están sujetas a cálculo de ISR en tu declaración anual.'
     ],
     errors: [

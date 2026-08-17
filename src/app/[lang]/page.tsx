@@ -96,6 +96,9 @@ export default function Home({ params }: { params: Promise<{ lang: string }> }) 
           </Link>
           <div className="flex items-center gap-3 sm:gap-4">
             <nav className="flex space-x-4 sm:space-x-6">
+              <Link href="/tipo-de-cambio-sunat" className="text-sm font-bold text-slate-600 dark:text-slate-350 hover:text-blue-600 dark:hover:text-blue-400 transition flex items-center gap-1 whitespace-nowrap">
+                🇵🇪 Tipo de Cambio SUNAT
+              </Link>
               <Link href={lang === 'en' ? '/en/calendario-fiscal' : '/calendario-fiscal'} className="text-sm font-bold text-slate-600 dark:text-slate-350 hover:text-blue-600 dark:hover:text-blue-400 transition flex items-center gap-1 whitespace-nowrap">
                 📅 {dict.nav.calendar}
               </Link>

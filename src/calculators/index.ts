@@ -22,6 +22,12 @@ import { aforeCalculator } from './finanzas-personales/afore';
 import { horasExtraCalculator } from './nomina/horas-extra';
 import { conversionImpuestosCalculator } from './sat/conversion-impuestos';
 import { recargosCalculator } from './sat/recargos';
+import { tipoCambioSunatCalculator } from './conversiones/tipo-de-cambio-sunat';
+import { tipoCambioSolventarObligacionesCalculator } from './conversiones/tipo-de-cambio-para-solventar-obligaciones';
+import { calculadoraDolaresASolesCalculator } from './conversiones/calculadora-dolares-a-soles';
+import { calculadoraSolesADolaresCalculator } from './conversiones/calculadora-soles-a-dolares';
+import { consultaRucSunatCalculator } from './conversiones/consulta-ruc-sunat';
+import { tablasEIndicadoresSunatCalculator } from './conversiones/tablas-e-indicadores-sunat';
 
 export const calculators: CalculatorConfig[] = [
   ivaCalculator,
@@ -42,6 +48,12 @@ export const calculators: CalculatorConfig[] = [
   umaCalculator,
   prestamoCalculator,
   tipoCambioCalculator,
+  tipoCambioSunatCalculator,
+  tipoCambioSolventarObligacionesCalculator,
+  calculadoraDolaresASolesCalculator,
+  calculadoraSolesADolaresCalculator,
+  consultaRucSunatCalculator,
+  tablasEIndicadoresSunatCalculator,
   depreciacionCalculator,
   aforeCalculator,
   horasExtraCalculator,
