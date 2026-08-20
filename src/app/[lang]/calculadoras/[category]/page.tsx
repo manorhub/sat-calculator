@@ -5,7 +5,8 @@ import { getCalculatorsByCategory } from '../../../../calculators';
 import dynamic from 'next/dynamic';
 const AIAssistant = dynamic(() => import('../../../../components/AI/AIAssistant'));
 import LanguageSelector from '../../../../components/LanguageSelector';
-import ThemeToggle from '../../../../components/ThemeToggle';
+import ThemeToggle from '@/components/ThemeToggle';
+import Footer from '@/components/Footer';
 
 interface PageProps {
   params: Promise<{
@@ -267,27 +268,7 @@ export default async function CategoryPage({ params }: PageProps) {
         )}
       </main>
 
-      {/* Footer */}
-      <footer className="bg-white dark:bg-slate-900 border-t border-slate-200 dark:border-slate-800 py-8">
-        <div className="max-w-6xl mx-auto px-4 flex flex-col md:flex-row justify-between items-center gap-6 text-slate-500 text-xs sm:text-sm text-center md:text-left">
-          <div className="mb-4 md:mb-0">
-            <span className="font-extrabold text-slate-900 dark:text-white text-base">
-              Calculadora<span className="text-blue-600">SAT</span>
-            </span>
-            <p className="mt-1">
-              {lang === 'en' 
-                ? '© 2026 All rights reserved. This site is not affiliated with the official SAT.' 
-                : '© 2026 Todos los derechos reservados. Este sitio no está afiliado al SAT oficial.'}
-            </p>
-          </div>
-          <div className="flex flex-wrap justify-center md:justify-end gap-x-6 gap-y-3 mt-4 md:mt-0">
-            <Link href={lang === 'en' ? '/en' : '/'} className="hover:text-slate-700 transition">{lang === 'en' ? 'Home' : 'Inicio'}</Link>
-            <Link href={lang === 'en' ? '/en/privacy' : '/privacy'} className="hover:text-slate-700 transition">{lang === 'en' ? 'Privacy' : 'Privacidad'}</Link>
-            <Link href={lang === 'en' ? '/en/terms' : '/terms'} className="hover:text-slate-700 transition">{lang === 'en' ? 'Terms' : 'Términos'}</Link>
-            <Link href={lang === 'en' ? '/en/contact' : '/contact'} className="hover:text-slate-700 transition">{lang === 'en' ? 'Contact' : 'Contacto'}</Link>
-          </div>
-        </div>
-      </footer>
+      <Footer lang={lang} />
 
       {/* Contextual AI Assistant */}
       <AIAssistant activeCalculatorContext={`Categoría ${categoryInfo.name}`} />

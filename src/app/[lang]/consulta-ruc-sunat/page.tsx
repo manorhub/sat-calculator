@@ -3,6 +3,7 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import LanguageSelector from '@/components/LanguageSelector';
 import ThemeToggle from '@/components/ThemeToggle';
+import Footer from '@/components/Footer';
 import ConsultaRucClient from './ConsultaRucClient';
 
 interface PageProps {
@@ -221,9 +222,7 @@ export default async function ConsultaRucPage({ params }: PageProps) {
 
       </main>
 
-      <footer className="bg-white dark:bg-slate-900 border-t border-slate-200 dark:border-slate-800 py-12 mt-16 text-center text-xs text-slate-500">
-        © 2026 Calculadora SAT. Guía informativa e independiente de trámites en Perú.
-      </footer>
+      <Footer lang={lang} />
     </div>
   );
 }

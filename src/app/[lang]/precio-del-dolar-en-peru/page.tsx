@@ -3,6 +3,7 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import LanguageSelector from '@/components/LanguageSelector';
 import ThemeToggle from '@/components/ThemeToggle';
+import Footer from '@/components/Footer';
 import PrecioDolarPeruClient from './PrecioDolarPeruClient';
 import { getMarketExchangeRate } from '@/lib/exchange-rates/market-rate';
 import { getSunatExchangeRate } from '@/lib/sunat-exchange-rate';
@@ -302,9 +303,7 @@ export default async function PrecioDolarPeruPage({ params }: PageProps) {
 
       </main>
 
-      <footer className="bg-white dark:bg-slate-900 border-t border-slate-200 dark:border-slate-800 py-12 mt-16 text-center text-xs text-slate-500">
-        © 2026 Calculadora SAT. Información financiera y macroeconómica referencial en Perú.
-      </footer>
+      <Footer lang={lang} />
     </div>
   );
 }

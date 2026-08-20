@@ -4,6 +4,7 @@ import React, { useState, use } from 'react';
 import Link from 'next/link';
 import LanguageSelector from '../../../components/LanguageSelector';
 import ThemeToggle from '../../../components/ThemeToggle';
+import Footer from '@/components/Footer';
 
 export default function ContactPage({ params }: { params: Promise<{ lang: string }> }) {
   const resolvedParams = use(params);
@@ -182,9 +183,7 @@ export default function ContactPage({ params }: { params: Promise<{ lang: string
           </main>
         </div>
 
-        <footer className="border-t border-slate-200 dark:border-slate-850 bg-white dark:bg-slate-900 py-8 text-center text-slate-500 text-xs mt-12">
-          <p>© 2026 Calculadora SAT. All rights reserved. Inquiries to fkdigitalmedia@gmail.com</p>
-        </footer>
+        <Footer lang="en" />
       </div>
     );
   }
@@ -348,9 +347,7 @@ export default function ContactPage({ params }: { params: Promise<{ lang: string
         </main>
       </div>
 
-      <footer className="border-t border-slate-200 dark:border-slate-850 bg-white dark:bg-slate-900 py-8 text-center text-slate-500 text-xs mt-12">
-        <p>© 2026 Calculadora SAT. Todos los derechos reservados. Consultas a fkdigitalmedia@gmail.com</p>
-      </footer>
+      <Footer lang={lang} />
     </div>
   );
 }

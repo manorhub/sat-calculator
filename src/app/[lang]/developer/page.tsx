@@ -4,6 +4,7 @@ import React, { useState, use } from 'react';
 import Link from 'next/link';
 import LanguageSelector from '../../../components/LanguageSelector';
 import ThemeToggle from '../../../components/ThemeToggle';
+import Footer from '@/components/Footer';
 
 interface PageProps {
   params: Promise<{
@@ -204,22 +205,7 @@ console.log(data);`;
           </section>
         </main>
 
-        {/* Footer */}
-        <footer className="border-t border-slate-800 bg-slate-950 py-12 text-slate-500 text-sm">
-          <div className="max-w-6xl mx-auto px-4 flex flex-col md:flex-row justify-between items-center gap-6 text-center md:text-left">
-            <div className="mb-4 md:mb-0">
-              <span className="font-extrabold text-white text-base">
-                Calculadora<span className="text-blue-500">SAT</span> <span className="text-xs font-semibold text-slate-605">DevPortal</span>
-              </span>
-              <p className="mt-1">© 2026 All rights reserved. B2B License subject to commercial terms of service.</p>
-            </div>
-            <div className="flex flex-wrap justify-center md:justify-end gap-x-6 gap-y-3 mt-4 md:mt-0">
-              <Link href="/en" className="hover:text-slate-300 transition">Calculators</Link>
-              <Link href="/en/privacy" className="hover:text-slate-300 transition">Privacy</Link>
-              <Link href="/en/terms" className="hover:text-slate-300 transition">Terms</Link>
-            </div>
-          </div>
-        </footer>
+        <Footer lang="en" />
       </div>
     );
   }
@@ -349,22 +335,7 @@ console.log(data);`;
         </section>
       </main>
 
-      {/* Footer */}
-      <footer className="border-t border-slate-800 bg-slate-955 py-12 text-slate-500 text-sm">
-        <div className="max-w-6xl mx-auto px-4 flex flex-col md:flex-row justify-between items-center gap-6 text-center md:text-left">
-          <div className="mb-4 md:mb-0">
-            <span className="font-extrabold text-white text-base">
-              Calculadora<span className="text-blue-500">SAT</span> <span className="text-xs font-semibold text-slate-655">DevPortal</span>
-            </span>
-            <p className="mt-1">© 2026 Todos los derechos reservados. Licencia B2B sujeta a términos de servicio comerciales.</p>
-          </div>
-          <div className="flex flex-wrap justify-center md:justify-end gap-x-6 gap-y-3 mt-4 md:mt-0">
-            <Link href="/" className="hover:text-slate-350 transition">Calculadoras</Link>
-            <Link href="/privacy" className="hover:text-slate-350 transition">Privacidad</Link>
-            <Link href="/terms" className="hover:text-slate-350 transition">Términos</Link>
-          </div>
-        </div>
-      </footer>
+      <Footer lang={lang} />
     </div>
   );
 }

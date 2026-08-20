@@ -3,6 +3,7 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import LanguageSelector from '@/components/LanguageSelector';
 import ThemeToggle from '@/components/ThemeToggle';
+import Footer from '@/components/Footer';
 import IgvPeruClient from './IgvPeruClient';
 
 interface PageProps {
@@ -265,9 +266,7 @@ export default async function IgvPeruPage({ params }: PageProps) {
         </article>
       </main>
 
-      <footer className="bg-white dark:bg-slate-900 border-t border-slate-200 dark:border-slate-800 py-12 mt-16 text-center text-xs text-slate-500">
-        © 2026 Calculadora SAT. Información estimativa basada en la normativa del IGV en Perú. No afiliado oficialmente a la SUNAT.
-      </footer>
+      <Footer lang={lang} />
     </div>
   );
 }

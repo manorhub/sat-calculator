@@ -1,6 +1,7 @@
 import React from 'react';
 import Link from 'next/link';
 import LanguageSelector from '../../../components/LanguageSelector';
+import Footer from '@/components/Footer';
 import ThemeToggle from '../../../components/ThemeToggle';
 
 interface PageProps {
@@ -163,9 +164,7 @@ export default async function TermsPage({ params }: PageProps) {
         </div>
       </main>
 
-      <footer className="border-t border-slate-200 dark:border-slate-850 bg-white dark:bg-slate-900 py-8 text-center text-slate-500 text-xs">
-        <p>© 2026 Calculadora SAT. Todos los derechos reservados. Diseñado bajo el marco legal tributario de México.</p>
-      </footer>
+      <Footer lang={lang} />
     </div>
   );
 }

@@ -3,6 +3,7 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import LanguageSelector from '@/components/LanguageSelector';
 import ThemeToggle from '@/components/ThemeToggle';
+import Footer from '@/components/Footer';
 import GratificacionClient from './GratificacionClient';
 
 interface PageProps {
@@ -208,9 +209,7 @@ export default async function GratificacionPage({ params }: PageProps) {
         </article>
       </main>
 
-      <footer className="bg-white dark:bg-slate-900 border-t border-slate-200 dark:border-slate-800 py-12 mt-16 text-center text-xs text-slate-500">
-        © 2026 Calculadora SAT. Cálculo estimativo basado en la Ley N° 27735 y Ley N° 30334 de Perú.
-      </footer>
+      <Footer lang={lang} />
     </div>
   );
 }

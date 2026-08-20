@@ -3,6 +3,7 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import LanguageSelector from '@/components/LanguageSelector';
 import ThemeToggle from '@/components/ThemeToggle';
+import Footer from '@/components/Footer';
 import SemanasCotizadasClient from './SemanasCotizadasClient';
 
 interface PageProps {
@@ -254,9 +255,7 @@ export default async function SemanasCotizadasPage({ params }: PageProps) {
 
       </main>
 
-      <footer className="bg-white dark:bg-slate-900 border-t border-slate-200 dark:border-slate-800 py-12 mt-16 text-center text-xs text-slate-500">
-        © 2026 Calculadora SAT. Información estimativa basada en la Ley del Seguro Social de México. No afiliado oficialmente con el IMSS.
-      </footer>
+      <Footer lang={lang} />
     </div>
   );
 }

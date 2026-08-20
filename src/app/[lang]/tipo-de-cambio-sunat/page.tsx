@@ -3,6 +3,7 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import LanguageSelector from '@/components/LanguageSelector';
 import ThemeToggle from '@/components/ThemeToggle';
+import Footer from '@/components/Footer';
 import SunatCalculatorClient from './SunatCalculatorClient';
 import { getSunatExchangeRate, getSunatHistoricalRatesList } from '@/lib/sunat-exchange-rate';
 
@@ -415,24 +416,7 @@ export default async function SunatPage({ params }: PageProps) {
 
       </main>
 
-      {/* Footer */}
-      <footer className="bg-white dark:bg-slate-900 border-t border-slate-200 dark:border-slate-800 py-12 mt-16">
-        <div className="max-w-6xl mx-auto px-4 flex flex-col md:flex-row justify-between items-center gap-6 text-slate-500 text-sm text-center md:text-left">
-          <div>
-            <span className="font-extrabold text-slate-900 dark:text-white text-base">
-              Calculadora<span className="text-blue-600">SAT</span>
-            </span>
-            <p className="mt-1">
-              © 2026 Todos los derechos reservados. Este sitio web es una herramienta informativa independiente y no está afiliado ni representa a la SUNAT de Perú ni al SAT de México.
-            </p>
-          </div>
-          <div className="flex flex-wrap justify-center md:justify-end gap-x-6 gap-y-3">
-            <Link href={lang === 'en' ? '/en/privacy' : '/privacy'} className="hover:text-slate-700 transition">Privacidad</Link>
-            <Link href={lang === 'en' ? '/en/terms' : '/terms'} className="hover:text-slate-700 transition">Términos</Link>
-            <Link href={lang === 'en' ? '/en/about' : '/about'} className="hover:text-slate-700 transition">Acerca de</Link>
-          </div>
-        </div>
-      </footer>
+      <Footer lang={lang} />
     </div>
   );
 }
