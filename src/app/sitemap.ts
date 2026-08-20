@@ -31,6 +31,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
     'calculadora-soles-a-dolares',
     'consulta-ruc-sunat',
     'tablas-e-indicadores-sunat',
+    'calculadora-igv-peru',
+    'calculadora-quinta-categoria-peru',
+    'calculadora-gratificacion-peru',
+    'calculadora-cts-peru',
+    'calculadora-comisiones-tarjeta-dolares',
   ];
 
   const staticEntries = staticPaths.map((path) => {

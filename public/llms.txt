@@ -19,6 +19,11 @@
 - [/tipo-de-cambio-para-solventar-obligaciones](https://calculadorasat.org/tipo-de-cambio-para-solventar-obligaciones): Calculadora del tipo de cambio legal para cancelar deudas y tributos en moneda extranjera.
 - [/consulta-ruc-sunat](https://calculadorasat.org/consulta-ruc-sunat): Guía de consulta de RUC ante la SUNAT y validador de 11 dígitos con Módulo 11.
 - [/tablas-e-indicadores-sunat](https://calculadorasat.org/tablas-e-indicadores-sunat): Tablas oficiales e indicadores tributarios de Perú, histórico de la UIT (2023-2026: S/ 5,350 en 2026).
+- [/calculadora-igv-peru](https://calculadorasat.org/calculadora-igv-peru): Calculadora de IGV Perú (18%). Agregar o desglosar IGV de facturas electrónicas SUNAT.
+- [/calculadora-quinta-categoria-peru](https://calculadorasat.org/calculadora-quinta-categoria-peru): Calculadora Renta 5ta Categoría 2026. Retención mensual con deducción de 7 UIT (S/ 37,450).
+- [/calculadora-gratificacion-peru](https://calculadorasat.org/calculadora-gratificacion-peru): Calculadora de Gratificación Perú (Julio y Diciembre) + Bonificación Extraordinaria 9% EsSalud.
+- [/calculadora-cts-peru](https://calculadorasat.org/calculadora-cts-peru): Calculadora de CTS (Compensación por Tiempo de Servicios) en Perú.
+- [/calculadora-comisiones-tarjeta-dolares](https://calculadorasat.org/calculadora-comisiones-tarjeta-dolares): Calculadora de Comisiones por Compras en Dólares con Tarjeta Bancaria (Forex).
 
 ## Herramientas Fiscales SAT México
 

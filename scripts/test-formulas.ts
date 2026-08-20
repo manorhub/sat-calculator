@@ -342,6 +342,61 @@ if (tarjetaCalc) {
   failedTests++;
 }
 
+// 26. Test IGV Perú
+const igvPeruCalc = calculators.find(c => c.id === 'igv-peru');
+if (igvPeruCalc) {
+  const res = igvPeruCalc.calculate({ monto: 1000, modo: 'agregar' });
+  const total = res.results.find(r => r.isMain)?.value;
+  assert(total === 1180, 'IGV Perú: Base de S/ 1000 + 18% IGV equivale a S/ 1180');
+} else {
+  console.error('No se encontró la calculadora de IGV Perú.');
+  failedTests++;
+}
+
+// 27. Test Renta 5ta Categoría Perú
+const quintaCalc = calculators.find(c => c.id === 'quinta-categoria-peru');
+if (quintaCalc) {
+  const res = quintaCalc.calculate({ sueldo_mensual: 4500, meses_trabajados: 12, gratificaciones: 9000 });
+  const retencion = res.results.find(r => r.isMain)?.value;
+  assert(typeof retencion === 'number' && retencion > 0, 'Renta 5ta Categoría: Retención calculada correctamente con deducción 7 UIT');
+} else {
+  console.error('No se encontró la calculadora de Renta de 5ta Categoría.');
+  failedTests++;
+}
+
+// 28. Test Gratificación Perú
+const gratsCalc = calculators.find(c => c.id === 'gratificacion-peru');
+if (gratsCalc) {
+  const res = gratsCalc.calculate({ sueldo_bruto: 3000, meses_completo: 6, afiliacion_salud: 'essalud' });
+  const total = res.results.find(r => r.isMain)?.value;
+  assert(total === 3270, 'Gratificación Perú: S/ 3000 + 9% EsSalud (S/ 270) = S/ 3270 PEN');
+} else {
+  console.error('No se encontró la calculadora de Gratificación Perú.');
+  failedTests++;
+}
+
+// 29. Test CTS Perú
+const ctsCalc = calculators.find(c => c.id === 'cts-peru');
+if (ctsCalc) {
+  const res = ctsCalc.calculate({ sueldo_bruto: 3600, gratificacion_recibida: 3600, meses_semestre: 6 });
+  const total = res.results.find(r => r.isMain)?.value;
+  assert(total === 2100, 'CTS Perú: Sueldo S/ 3600 + 1/6 gratificación (S/ 600) por 6 meses = S/ 2100 PEN');
+} else {
+  console.error('No se encontró la calculadora de CTS Perú.');
+  failedTests++;
+}
+
+// 30. Test Comisiones Tarjeta Dólares
+const comisionesCalc = calculators.find(c => c.id === 'comisiones-tarjeta-dolares');
+if (comisionesCalc) {
+  const res = comisionesCalc.calculate({ monto_usd: 100, tasa_cambio_base: 3.75, comision_porcentaje: 3.5 });
+  const total = res.results.find(r => r.isMain)?.value;
+  assert(Math.round((total || 0) * 100) / 100 === 388.13, 'Comisiones Tarjeta: $100 USD a tasa 3.75 con 3.5% comisión = S/ 388.13 PEN');
+} else {
+  console.error('No se encontró la calculadora de Comisiones de Tarjeta Dólares.');
+  failedTests++;
+}
+
 console.log(`\n========================================`);
 console.log(`RESULTADOS DE LAS PRUEBAS UNITARIAS:`);
 console.log(`PASARON: ${passedTests} de ${passedTests + failedTests}`);

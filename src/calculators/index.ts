@@ -32,6 +32,11 @@ import { dolarHoyCalculator } from './conversiones/dolar-hoy';
 import { precioDelDolarEnPeruCalculator } from './conversiones/precio-del-dolar-en-peru';
 import { semanasCotizadasImssCalculator } from './nomina/semanas-cotizadas-imss';
 import { pagoTarjetaCreditoCalculator } from './finanzas-personales/pago-tarjeta-credito';
+import { igvPeruCalculator } from './conversiones/igv-peru';
+import { quintaCategoriaPeruCalculator } from './nomina/quinta-categoria-peru';
+import { gratificacionPeruCalculator } from './nomina/gratificacion-peru';
+import { ctsPeruCalculator } from './nomina/cts-peru';
+import { comisionesTarjetaDolaresCalculator } from './finanzas-personales/comisiones-tarjeta-dolares';
 
 export const calculators: CalculatorConfig[] = [
   ivaCalculator,
@@ -45,11 +50,15 @@ export const calculators: CalculatorConfig[] = [
   finiquitoCalculator,
   ptuCalculator,
   semanasCotizadasImssCalculator,
+  gratificacionPeruCalculator,
+  ctsPeruCalculator,
+  quintaCategoriaPeruCalculator,
   cetesCalculator,
   hipotecarioCalculator,
   compoundInterestCalculator,
   rule503020Calculator,
   pagoTarjetaCreditoCalculator,
+  comisionesTarjetaDolaresCalculator,
   breakEvenCalculator,
   umaCalculator,
   prestamoCalculator,
@@ -62,6 +71,7 @@ export const calculators: CalculatorConfig[] = [
   tablasEIndicadoresSunatCalculator,
   dolarHoyCalculator,
   precioDelDolarEnPeruCalculator,
+  igvPeruCalculator,
   depreciacionCalculator,
   aforeCalculator,
   horasExtraCalculator,
