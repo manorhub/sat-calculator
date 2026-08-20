@@ -137,61 +137,161 @@ export default async function TipoCambioGeneralPage({ params }: PageProps) {
 
         <TipoCambioGeneralClient marketRate={marketRate} sunatRate={sunatRate} />
 
-        {/* Educational Content */}
-        <section className="mt-12 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-3xl p-6 sm:p-10 shadow-sm space-y-6">
-          <h2 className="text-2xl font-black text-slate-950 dark:text-white">
-            Conceptos fundamentales sobre el Tipo de Cambio
-          </h2>
+        {/* Detailed 500+ Words SEO Content & Comprehensive Guide Section */}
+        <article className="mt-12 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-3xl p-6 sm:p-10 shadow-sm space-y-8 text-slate-700 dark:text-slate-300 leading-relaxed">
+          <section className="space-y-4">
+            <h2 className="text-2xl font-black text-slate-950 dark:text-white tracking-tight">
+              ¿Qué es el Tipo de Cambio y Cómo Funciona en el Perú?
+            </h2>
+            <p>
+              El <strong>tipo de cambio</strong> es el precio de una moneda expresado en términos de otra. En el caso del Perú, la paridad cambiaria de mayor relevancia económica y financiera es el par <strong>USD/PEN</strong>, que representa la cantidad de <strong>soles peruanos</strong> requeridos para comprar un <strong>dólar estadounidense</strong>.
+            </p>
+            <p>
+              En el territorio peruano rige un esquema cambiario de <strong>flotación administrada</strong> impulsado por el Banco Central de Reserva del Perú (BCRP). Bajo este sistema, el valor del dólar se determina por la oferta y la demanda del mercado libre, aunque el BCRP interviene de forma oportuna para mitigar volatilidades extremas y asegurar la estabilidad macroeconómica nacional.
+            </p>
+          </section>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <div className="p-5 rounded-2xl bg-slate-50 dark:bg-slate-950 border border-slate-200 dark:border-slate-800">
-              <h3 className="font-bold text-slate-900 dark:text-white text-base mb-2">
-                Precio de Compra vs Precio de Venta
-              </h3>
-              <p className="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">
-                El <strong>precio de compra</strong> es la tasa a la que una entidad financiera te compra tus dólares. El <strong>precio de venta</strong> es la tasa a la que la entidad te vende dólares a ti. La diferencia entre ambos es el spread cambiario.
-              </p>
+          <section className="space-y-4">
+            <h2 className="text-xl font-extrabold text-slate-950 dark:text-white tracking-tight">
+              Diferencia Fundamental: Tipo de Cambio Compra vs. Venta
+            </h2>
+            <p>
+              Cualquier entidad que opera en el mercado cambiaría (bancos comerciales, casas de cambio digitales y cambistas) publica dos precios diferentes:
+            </p>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 pt-2">
+              <div className="p-5 rounded-2xl bg-slate-50 dark:bg-slate-950 border border-slate-200 dark:border-slate-800">
+                <h3 className="font-bold text-slate-900 dark:text-white text-base mb-2 flex items-center gap-2">
+                  <span>🟢</span> Tipo de Cambio Compra (Bid)
+                </h3>
+                <p className="text-xs leading-relaxed text-slate-600 dark:text-slate-400">
+                  Es la cotización a la cual la entidad financiera te compra tus dólares. Si tienes dólares en efectivo o en tu cuenta y deseas cambiarlos a soles, la entidad aplicará el precio de compra. Para convertir dólares a soles, utiliza nuestra herramienta <Link href="/dolares-a-soles" className="text-blue-600 dark:text-blue-400 font-bold hover:underline">Dólares a Soles</Link>.
+                </p>
+              </div>
+
+              <div className="p-5 rounded-2xl bg-slate-50 dark:bg-slate-950 border border-slate-200 dark:border-slate-800">
+                <h3 className="font-bold text-slate-900 dark:text-white text-base mb-2 flex items-center gap-2">
+                  <span>🔴</span> Tipo de Cambio Venta (Ask)
+                </h3>
+                <p className="text-xs leading-relaxed text-slate-600 dark:text-slate-400">
+                  Es la cotización a la cual la entidad financiera te vende los dólares. Si tienes soles y deseas adquirir dólares americanos, la entidad aplicará el precio de venta. Para calcular esta conversión, usa nuestro simulador <Link href="/soles-a-dolares" className="text-blue-600 dark:text-blue-400 font-bold hover:underline">Soles a Dólares</Link>.
+                </p>
+              </div>
             </div>
+          </section>
 
-            <div className="p-5 rounded-2xl bg-slate-50 dark:bg-slate-950 border border-slate-200 dark:border-slate-800">
-              <h3 className="font-bold text-slate-900 dark:text-white text-base mb-2">
-                Mercado Libre vs Tipo de Cambio SUNAT
-              </h3>
-              <p className="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">
-                El <strong>mercado libre</strong> fluctúa de forma continua durante las horas bursátiles. El <strong>tipo de cambio SUNAT</strong> es la referencia estandarizada que exige la legislación tributaria peruana para el registro contable y la liquidación de tributos.
-              </p>
+          <section className="space-y-4">
+            <h2 className="text-xl font-extrabold text-slate-950 dark:text-white tracking-tight">
+              Factores Macroeconómicos que Influyen en el Precio del Dólar en Perú
+            </h2>
+            <p>
+              El precio del dólar en el Perú se ve afectado por factores internacionales y locales:
+            </p>
+            <ul className="list-disc pl-5 space-y-2 text-sm">
+              <li>
+                <strong>Precio Internacional del Cobre y Minería:</strong> El cobre es el principal producto de exportación del Perú. Precios elevados del cobre generan un mayor flujo de divisas (dólares) al país, fortaleciendo el Sol peruano.
+              </li>
+              <li>
+                <strong>Decisiones de la Reserva Federal (Fed) de EE.UU.:</strong> El incremento de las tasas de interés por parte de la Fed atrae capitales globales hacia activos denominados en dólares, elevando la cotización del billete verde a nivel mundial.
+              </li>
+              <li>
+                <strong>Intervención Cambiaria del BCRP:</strong> El BCRP interviene vendiendo dólares en el mercado spot o emitiendo certificados de depósito reajustables (CDBCRP) para amortiguar picos repentinos de alza o caída del dólar.
+              </li>
+              <li>
+                <strong>Obligaciones Tributarias ante la SUNAT:</strong> En fechas de vencimiento de impuestos ante la <Link href="/tipo-de-cambio-sunat" className="text-blue-600 dark:text-blue-400 font-bold hover:underline">SUNAT</Link>, las empresas demandan mayores montos en Soles para cumplir con sus declaraciones, influyendo temporalmente en la liquidez cambiaria.
+              </li>
+            </ul>
+          </section>
+
+          <section className="space-y-4">
+            <h2 className="text-xl font-extrabold text-slate-950 dark:text-white tracking-tight">
+              Preguntas Frecuentes sobre el Tipo de Cambio en Perú
+            </h2>
+            <div className="space-y-4 text-sm">
+              <div className="border-b border-slate-200 dark:border-slate-800 pb-3">
+                <h3 className="font-bold text-slate-900 dark:text-white mb-1">
+                  ¿Por qué el Tipo de Cambio SUNAT difiere del Mercado Interbancario?
+                </h3>
+                <p className="text-slate-600 dark:text-slate-400 text-xs">
+                  El mercado interbancario fluctúa en tiempo real según las negociaciones de los bancos. El <Link href="/tipo-de-cambio-sunat" className="text-blue-600 dark:text-blue-400 font-bold hover:underline">Tipo de Cambio SUNAT</Link> es una tasa oficial fijada diariamente para fines exclusivamente tributarios y contables.
+                </p>
+              </div>
+
+              <div className="border-b border-slate-200 dark:border-slate-800 pb-3">
+                <h3 className="font-bold text-slate-900 dark:text-white mb-1">
+                  ¿Dónde puedo ver la cotización del dólar en vivo hoy?
+                </h3>
+                <p className="text-slate-600 dark:text-slate-400 text-xs">
+                  Puedes consultar los valores en vivo de compra, venta y variación del mercado en nuestra página especializada de <Link href="/dolar-hoy" className="text-blue-600 dark:text-blue-400 font-bold hover:underline">Dólar Hoy en Perú</Link>.
+                </p>
+              </div>
+
+              <div>
+                <h3 className="font-bold text-slate-900 dark:text-white mb-1">
+                  ¿Qué tasa se aplica para el pago de deudas y deudas contractuales?
+                </h3>
+                <p className="text-slate-600 dark:text-slate-400 text-xs">
+                  Para la liquidación formal de deudas en moneda extranjera según el Código Civil Peruano, se debe consultar el <Link href="/tipo-de-cambio-para-solventar-obligaciones" className="text-blue-600 dark:text-blue-400 font-bold hover:underline">Tipo de Cambio para Solventar Obligaciones</Link>.
+                </p>
+              </div>
             </div>
-          </div>
-        </section>
+          </section>
 
-        <section className="mt-12 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-3xl p-6 sm:p-8 shadow-sm">
-          <h2 className="text-xl font-bold text-slate-950 dark:text-white mb-6">
-            🔗 Herramientas relacionadas
-          </h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 text-sm font-semibold">
-            <Link href="/dolar-hoy" className="p-4 rounded-2xl border border-slate-200 dark:border-slate-800 hover:border-blue-500 transition bg-slate-50 dark:bg-slate-950 flex items-center gap-3">
-              <span className="text-2xl">💵</span>
-              <div>
-                <div className="text-slate-900 dark:text-white font-bold">Dólar Hoy en Perú</div>
-                <div className="text-xs text-slate-500 font-normal">Cotización en tiempo real</div>
-              </div>
-            </Link>
-            <Link href="/tipo-de-cambio-sunat" className="p-4 rounded-2xl border border-slate-200 dark:border-slate-800 hover:border-blue-500 transition bg-slate-50 dark:bg-slate-950 flex items-center gap-3">
-              <span className="text-2xl">🇵🇪</span>
-              <div>
-                <div className="text-slate-900 dark:text-white font-bold">Tipo de Cambio SUNAT</div>
-                <div className="text-xs text-slate-500 font-normal">Referencia legal tributaria</div>
-              </div>
-            </Link>
-            <Link href="/dolares-a-soles" className="p-4 rounded-2xl border border-slate-200 dark:border-slate-800 hover:border-blue-500 transition bg-slate-50 dark:bg-slate-950 flex items-center gap-3">
-              <span className="text-2xl">💱</span>
-              <div>
-                <div className="text-slate-900 dark:text-white font-bold">Dólares a Soles</div>
-                <div className="text-xs text-slate-500 font-normal">Calculadora USD → PEN</div>
-              </div>
-            </Link>
-          </div>
-        </section>
+          <section className="pt-4 border-t border-slate-200 dark:border-slate-800">
+            <h2 className="text-xl font-extrabold text-slate-950 dark:text-white mb-6">
+              🌐 Directorio de Herramientas y Calculadoras Cambiarias en Perú
+            </h2>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 text-sm font-semibold">
+              <Link href="/dolar-hoy" className="p-4 rounded-2xl border border-slate-200 dark:border-slate-800 hover:border-blue-500 transition bg-slate-50 dark:bg-slate-950 flex items-center gap-3">
+                <span className="text-2xl">📈</span>
+                <div>
+                  <div className="text-slate-900 dark:text-white font-bold">Dólar Hoy en Perú</div>
+                  <div className="text-xs text-slate-500 font-normal">Cotización interbancaria en vivo</div>
+                </div>
+              </Link>
+
+              <Link href="/precio-del-dolar-en-peru" className="p-4 rounded-2xl border border-slate-200 dark:border-slate-800 hover:border-blue-500 transition bg-slate-50 dark:bg-slate-950 flex items-center gap-3">
+                <span className="text-2xl">📊</span>
+                <div>
+                  <div className="text-slate-900 dark:text-white font-bold">Precio del Dólar en Perú</div>
+                  <div className="text-xs text-slate-500 font-normal">Análisis macroeconómico</div>
+                </div>
+              </Link>
+
+              <Link href="/tipo-de-cambio-sunat" className="p-4 rounded-2xl border border-slate-200 dark:border-slate-800 hover:border-blue-500 transition bg-slate-50 dark:bg-slate-950 flex items-center gap-3">
+                <span className="text-2xl">🇵🇪</span>
+                <div>
+                  <div className="text-slate-900 dark:text-white font-bold">Tipo de Cambio SUNAT</div>
+                  <div className="text-xs text-slate-500 font-normal">Cotización oficial del día</div>
+                </div>
+              </Link>
+
+              <Link href="/dolares-a-soles" className="p-4 rounded-2xl border border-slate-200 dark:border-slate-800 hover:border-blue-500 transition bg-slate-50 dark:bg-slate-950 flex items-center gap-3">
+                <span className="text-2xl">💵</span>
+                <div>
+                  <div className="text-slate-900 dark:text-white font-bold">Dólares a Soles</div>
+                  <div className="text-xs text-slate-500 font-normal">Conversor USD → PEN</div>
+                </div>
+              </Link>
+
+              <Link href="/soles-a-dolares" className="p-4 rounded-2xl border border-slate-200 dark:border-slate-800 hover:border-blue-500 transition bg-slate-50 dark:bg-slate-950 flex items-center gap-3">
+                <span className="text-2xl">💰</span>
+                <div>
+                  <div className="text-slate-900 dark:text-white font-bold">Soles a Dólares</div>
+                  <div className="text-xs text-slate-500 font-normal">Conversor PEN → USD</div>
+                </div>
+              </Link>
+
+              <Link href="/tipo-de-cambio-para-solventar-obligaciones" className="p-4 rounded-2xl border border-slate-200 dark:border-slate-800 hover:border-blue-500 transition bg-slate-50 dark:bg-slate-950 flex items-center gap-3">
+                <span className="text-2xl">🏛️</span>
+                <div>
+                  <div className="text-slate-900 dark:text-white font-bold">Solventar Obligaciones</div>
+                  <div className="text-xs text-slate-500 font-normal">Tasa para cancelación de deudas</div>
+                </div>
+              </Link>
+            </div>
+          </section>
+        </article>
 
       </main>
 

@@ -167,65 +167,125 @@ export default async function SolventarObligacionesPage({ params }: PageProps) {
 
         <SolventarObligacionesClient initialRate={initialRate} />
 
-        {/* Educational Content Section */}
-        <section className="mt-16 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-3xl p-6 sm:p-10 shadow-sm space-y-6">
-          <h2 className="text-2xl font-extrabold text-slate-950 dark:text-white">
-            ¿Qué significa "Solventar Obligaciones" en el marco legal peruano?
-          </h2>
-          <p className="text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
-            En Perú, según el Artículo 1237 del Código Civil y las disposiciones del Código Tributario dictadas por la SUNAT, las obligaciones pecuniarias pueden ser pactadas en moneda extranjera. Sin embargo, el deudor conserva siempre la facultad legal de pagar su obligación en moneda nacional (Soles), aplicando el tipo de cambio oficial de la fecha de pago o exigibilidad.
-          </p>
-          
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 pt-4">
-            <div className="p-5 rounded-2xl bg-slate-50 dark:bg-slate-950 border border-slate-200 dark:border-slate-800">
-              <h3 className="font-bold text-slate-900 dark:text-white text-base mb-2">
-                1. Pagos Tributarios ante SUNAT
-              </h3>
-              <p className="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">
-                Para el pago de impuestos acumulados o retenciones originadas en comprobantes de moneda extranjera, se utiliza obligatoriamente la cotización publicada por la SUNAT en su portal institucional.
-              </p>
-            </div>
+        {/* Detailed 500+ Words SEO Content & Legal Framework Article */}
+        <article className="mt-12 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-3xl p-6 sm:p-10 shadow-sm space-y-8 text-slate-700 dark:text-slate-300 leading-relaxed">
+          <section className="space-y-4">
+            <h2 className="text-2xl font-black text-slate-950 dark:text-white tracking-tight">
+              ¿Qué es el Tipo de Cambio para Solventar Obligaciones y Cómo Aplica en Perú?
+            </h2>
+            <p>
+              El <strong>Tipo de Cambio para Solventar Obligaciones</strong> es la tasa oficial de conversión utilizada en el territorio peruano para cancelar deudas, tributos fiscales y obligaciones contractuales pactadas originalmente en moneda extranjera (dólares estadounidenses) mediante su equivalente en moneda nacional (soles peruanos).
+            </p>
+            <p>
+              De acuerdo con el <strong>Artículo 1237 del Código Civil Peruano</strong> y las regulaciones tributarias de la <strong>SUNAT</strong>, un deudor tiene derecho a cancelar una obligación en dólares entregando soles peruanos al tipo de cambio de venta del día y lugar del pago.
+            </p>
+          </section>
 
-            <div className="p-5 rounded-2xl bg-slate-50 dark:bg-slate-950 border border-slate-200 dark:border-slate-800">
-              <h3 className="font-bold text-slate-900 dark:text-white text-base mb-2">
-                2. Deudas Comerciales y Bancarias
-              </h3>
-              <p className="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">
-                En transacciones comerciales entre particulares o instituciones bancarias, se aplicará el tipo de cambio pactado o la cotización de Venta/Compra del sistema financiero en la fecha efectiva del abono.
-              </p>
-            </div>
-          </div>
-        </section>
+          <section className="space-y-4">
+            <h2 className="text-xl font-extrabold text-slate-950 dark:text-white tracking-tight">
+              Reglas de Aplicación: Pagos Tributarios vs. Contratos Civiles
+            </h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 pt-2">
+              <div className="p-5 rounded-2xl bg-slate-50 dark:bg-slate-950 border border-slate-200 dark:border-slate-800">
+                <h3 className="font-bold text-slate-900 dark:text-white text-base mb-2 flex items-center gap-2">
+                  <span>🏛️</span> Obligaciones Tributarias ante SUNAT
+                </h3>
+                <p className="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">
+                  Para liquidar impuestos expresados en dólares o calcular retenciones de IGV e Impuesto a la Renta, es de uso obligatorio el <Link href="/tipo-de-cambio-sunat" className="text-blue-600 dark:text-blue-400 font-bold hover:underline">Tipo de Cambio SUNAT</Link> de compra o venta según corresponda al tipo de operación.
+                </p>
+              </div>
 
-        {/* Bottom Related Cluster Tools */}
-        <section className="mt-12 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-3xl p-6 sm:p-8 shadow-sm">
-          <h2 className="text-xl font-bold text-slate-950 dark:text-white mb-6">
-            🔗 Herramientas relacionadas del Cluster SUNAT
-          </h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 text-sm font-semibold">
-            <Link href="/tipo-de-cambio-sunat" className="p-4 rounded-2xl border border-slate-200 dark:border-slate-800 hover:border-blue-500 transition bg-slate-50 dark:bg-slate-950 flex items-center gap-3">
-              <span className="text-2xl">🇵🇪</span>
-              <div>
-                <div className="text-slate-900 dark:text-white font-bold">Tipo de Cambio SUNAT</div>
-                <div className="text-xs text-slate-500 font-normal">Cotización de Hoy USD/PEN</div>
+              <div className="p-5 rounded-2xl bg-slate-50 dark:bg-slate-950 border border-slate-200 dark:border-slate-800">
+                <h3 className="font-bold text-slate-900 dark:text-white text-base mb-2 flex items-center gap-2">
+                  <span>📜</span> Obligaciones Civiles y Comerciales
+                </h3>
+                <p className="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">
+                  Para contratos de arrendamiento, compras de bienes o préstamos privados estipulados en dólares, las partes pueden emplear la tasa interbancaria de la SBS o acordar el valor referencial disponible en <Link href="/dolar-hoy" className="text-blue-600 dark:text-blue-400 font-bold hover:underline">Dólar Hoy en Perú</Link>.
+                </p>
               </div>
-            </Link>
-            <Link href="/calculadora-dolares-a-soles" className="p-4 rounded-2xl border border-slate-200 dark:border-slate-800 hover:border-blue-500 transition bg-slate-50 dark:bg-slate-950 flex items-center gap-3">
-              <span className="text-2xl">💵</span>
-              <div>
-                <div className="text-slate-900 dark:text-white font-bold">Dólares a Soles</div>
-                <div className="text-xs text-slate-500 font-normal">Convertidor USD a PEN</div>
+            </div>
+          </section>
+
+          <section className="space-y-4">
+            <h2 className="text-xl font-extrabold text-slate-950 dark:text-white tracking-tight">
+              Preguntas Frecuentes sobre el Pago de Obligaciones en Perú
+            </h2>
+            <div className="space-y-4 text-sm">
+              <div className="border-b border-slate-200 dark:border-slate-800 pb-3">
+                <h3 className="font-bold text-slate-900 dark:text-white mb-1">
+                  ¿Puedo pagar un contrato en soles si fue pactado en dólares?
+                </h3>
+                <p className="text-slate-600 dark:text-slate-400 text-xs">
+                  Sí, en Perú el Código Civil autoriza expresamente cancelar deudas en moneda extranjera entregando su equivalente en soles al tipo de cambio de venta del día del pago salvo pacto expreso en contrario (cláusula de pago efectivo en moneda extranjera).
+                </p>
               </div>
-            </Link>
-            <Link href="/tablas-e-indicadores-sunat" className="p-4 rounded-2xl border border-slate-200 dark:border-slate-800 hover:border-blue-500 transition bg-slate-50 dark:bg-slate-950 flex items-center gap-3">
-              <span className="text-2xl">📈</span>
-              <div>
-                <div className="text-slate-900 dark:text-white font-bold">Tablas e Indicadores SUNAT</div>
-                <div className="text-xs text-slate-500 font-normal">UIT e indicadores oficiales</div>
+
+              <div className="border-b border-slate-200 dark:border-slate-800 pb-3">
+                <h3 className="font-bold text-slate-900 dark:text-white mb-1">
+                  ¿Cómo convertir de Soles a Dólares o viceversa rápidamente?
+                </h3>
+                <p className="text-slate-600 dark:text-slate-400 text-xs">
+                  Aprovecha nuestros conversores especializados <Link href="/dolares-a-soles" className="text-blue-600 dark:text-blue-400 font-bold hover:underline">Dólares a Soles</Link> y <Link href="/soles-a-dolares" className="text-blue-600 dark:text-blue-400 font-bold hover:underline">Soles a Dólares</Link>.
+                </p>
               </div>
-            </Link>
-          </div>
-        </section>
+            </div>
+          </section>
+
+          <section className="pt-4 border-t border-slate-200 dark:border-slate-800">
+            <h2 className="text-xl font-extrabold text-slate-950 dark:text-white mb-6">
+              🌐 Red Completa de Calculadoras del Cluster Cambiario Peruano
+            </h2>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 text-sm font-semibold">
+              <Link href="/tipo-de-cambio-sunat" className="p-4 rounded-2xl border border-slate-200 dark:border-slate-800 hover:border-blue-500 transition bg-slate-50 dark:bg-slate-950 flex items-center gap-3">
+                <span className="text-2xl">🇵🇪</span>
+                <div>
+                  <div className="text-slate-900 dark:text-white font-bold">Tipo de Cambio SUNAT</div>
+                  <div className="text-xs text-slate-500 font-normal">Cotización oficial del día</div>
+                </div>
+              </Link>
+
+              <Link href="/dolar-hoy" className="p-4 rounded-2xl border border-slate-200 dark:border-slate-800 hover:border-blue-500 transition bg-slate-50 dark:bg-slate-950 flex items-center gap-3">
+                <span className="text-2xl">📈</span>
+                <div>
+                  <div className="text-slate-900 dark:text-white font-bold">Dólar Hoy en Perú</div>
+                  <div className="text-xs text-slate-500 font-normal">Cotización interbancaria en vivo</div>
+                </div>
+              </Link>
+
+              <Link href="/precio-del-dolar-en-peru" className="p-4 rounded-2xl border border-slate-200 dark:border-slate-800 hover:border-blue-500 transition bg-slate-50 dark:bg-slate-950 flex items-center gap-3">
+                <span className="text-2xl">📊</span>
+                <div>
+                  <div className="text-slate-900 dark:text-white font-bold">Precio del Dólar en Perú</div>
+                  <div className="text-xs text-slate-500 font-normal">Análisis económico y cotización</div>
+                </div>
+              </Link>
+
+              <Link href="/tipo-de-cambio" className="p-4 rounded-2xl border border-slate-200 dark:border-slate-800 hover:border-blue-500 transition bg-slate-50 dark:bg-slate-950 flex items-center gap-3">
+                <span className="text-2xl">🌐</span>
+                <div>
+                  <div className="text-slate-900 dark:text-white font-bold">Tipo de Cambio General</div>
+                  <div className="text-xs text-slate-500 font-normal">Guía conceptual cambiaria</div>
+                </div>
+              </Link>
+
+              <Link href="/dolares-a-soles" className="p-4 rounded-2xl border border-slate-200 dark:border-slate-800 hover:border-blue-500 transition bg-slate-50 dark:bg-slate-950 flex items-center gap-3">
+                <span className="text-2xl">💵</span>
+                <div>
+                  <div className="text-slate-900 dark:text-white font-bold">Dólares a Soles</div>
+                  <div className="text-xs text-slate-500 font-normal">Conversor USD → PEN</div>
+                </div>
+              </Link>
+
+              <Link href="/soles-a-dolares" className="p-4 rounded-2xl border border-slate-200 dark:border-slate-800 hover:border-blue-500 transition bg-slate-50 dark:bg-slate-950 flex items-center gap-3">
+                <span className="text-2xl">💰</span>
+                <div>
+                  <div className="text-slate-900 dark:text-white font-bold">Soles a Dólares</div>
+                  <div className="text-xs text-slate-500 font-normal">Conversor PEN → USD</div>
+                </div>
+              </Link>
+            </div>
+          </section>
+        </article>
 
       </main>
 

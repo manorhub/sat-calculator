@@ -154,68 +154,151 @@ export default async function PrecioDolarPeruPage({ params }: PageProps) {
 
         <PrecioDolarPeruClient marketRate={marketRate} sunatRate={sunatRate} />
 
-        {/* Factors section */}
-        <section className="mt-12 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-3xl p-6 sm:p-10 shadow-sm space-y-6">
-          <h2 className="text-2xl font-black text-slate-950 dark:text-white">
-            Factores que determinan el precio del dólar en Perú
-          </h2>
+        {/* Detailed 500+ Words SEO Content & Macroeconomic Analysis */}
+        <article className="mt-12 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-3xl p-6 sm:p-10 shadow-sm space-y-8 text-slate-700 dark:text-slate-300 leading-relaxed">
+          <section className="space-y-4">
+            <h2 className="text-2xl font-black text-slate-950 dark:text-white tracking-tight">
+              Análisis del Precio del Dólar en Perú y Factores Determinantes
+            </h2>
+            <p>
+              El <strong>precio del dólar en el Perú</strong> refleja la salud macroeconómica del país y su nivel de integración con los mercados globales. La economía peruana es una de las economías más sólidas de América Latina en términos cambiarios gracias a las elevadas reservas internacionales netas acumuladas por el Banco Central de Reserva del Perú (BCRP).
+            </p>
+            <p>
+              Sin embargo, fluctuaciones diarias en el precio del dólar impactan directamente en el costo de productos importados, combustibles, insumos agrícolas, créditos en moneda extranjera y tarifas de servicios.
+            </p>
+          </section>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <div className="p-5 rounded-2xl bg-slate-50 dark:bg-slate-950 border border-slate-200 dark:border-slate-800">
-              <span className="text-3xl mb-2 block">⛏️</span>
-              <h3 className="font-bold text-slate-900 dark:text-white text-base mb-1">Precio Internacional del Cobre</h3>
-              <p className="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">
-                Perú es el segundo productor mundial de cobre. Cuando el precio internacional del cobre sube, ingresan más dólares al país, fortaleciendo el sol peruano.
-              </p>
-            </div>
-
-            <div className="p-5 rounded-2xl bg-slate-50 dark:bg-slate-950 border border-slate-200 dark:border-slate-800">
-              <span className="text-3xl mb-2 block">🏛️</span>
-              <h3 className="font-bold text-slate-900 dark:text-white text-base mb-1">Intervención del BCRP</h3>
-              <p className="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">
-                El Banco Central de Reserva del Perú (BCRP) interviene mediante subastas de CDR, swaps cambiarios y venta directa de dólares para reducir la volatilidad.
-              </p>
-            </div>
-
-            <div className="p-5 rounded-2xl bg-slate-50 dark:bg-slate-950 border border-slate-200 dark:border-slate-800">
-              <span className="text-3xl mb-2 block">🇺🇸</span>
-              <h3 className="font-bold text-slate-900 dark:text-white text-base mb-1">Decisiones de la Fed</h3>
-              <p className="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">
-                Las alzas de tasas de interés por parte de la Reserva Federal de EE.UU. suelen fortalecer al dólar globalmente frente a monedas emergentes como el sol.
-              </p>
-            </div>
-          </div>
-        </section>
-
-        {/* Dynamic Topic Cluster Links */}
-        <section className="mt-12 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-3xl p-6 sm:p-8 shadow-sm">
-          <h2 className="text-xl font-bold text-slate-950 dark:text-white mb-6">
-            🔗 Herramientas relacionadas
-          </h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 text-sm font-semibold">
-            <Link href="/dolar-hoy" className="p-4 rounded-2xl border border-slate-200 dark:border-slate-800 hover:border-blue-500 transition bg-slate-50 dark:bg-slate-950 flex items-center gap-3">
-              <span className="text-2xl">💵</span>
-              <div>
-                <div className="text-slate-900 dark:text-white font-bold">Dólar Hoy en Perú</div>
-                <div className="text-xs text-slate-500 font-normal">Cotización del dólar en vivo</div>
+          <section className="space-y-4">
+            <h2 className="text-xl font-extrabold text-slate-950 dark:text-white tracking-tight">
+              Factores Fundamentales que Afectan el Precio del Dólar en Perú
+            </h2>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 pt-2">
+              <div className="p-5 rounded-2xl bg-slate-50 dark:bg-slate-950 border border-slate-200 dark:border-slate-800">
+                <span className="text-3xl mb-2 block">⛏️</span>
+                <h3 className="font-bold text-slate-900 dark:text-white text-base mb-1">Precio del Cobre y Minería</h3>
+                <p className="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">
+                  Perú es el segundo mayor exportador mundial de cobre. Precios elevados del mineral aumentan el flujo de dólares al país, incrementando la oferta cambiaria y apreciando el Sol.
+                </p>
               </div>
-            </Link>
-            <Link href="/tipo-de-cambio-sunat" className="p-4 rounded-2xl border border-slate-200 dark:border-slate-800 hover:border-blue-500 transition bg-slate-50 dark:bg-slate-950 flex items-center gap-3">
-              <span className="text-2xl">🇵🇪</span>
-              <div>
-                <div className="text-slate-900 dark:text-white font-bold">Tipo de Cambio SUNAT</div>
-                <div className="text-xs text-slate-500 font-normal">Tasa tributaria oficial</div>
+
+              <div className="p-5 rounded-2xl bg-slate-50 dark:bg-slate-950 border border-slate-200 dark:border-slate-800">
+                <span className="text-3xl mb-2 block">🏛️</span>
+                <h3 className="font-bold text-slate-900 dark:text-white text-base mb-1">Intervención del BCRP</h3>
+                <p className="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">
+                  El BCRP realiza intervenciones directas en el mercado cambiario spot y emite Certificados de Depósito Reajustables (CDBCRP) para amortiguar picos de volatilidad.
+                </p>
               </div>
-            </Link>
-            <Link href="/dolares-a-soles" className="p-4 rounded-2xl border border-slate-200 dark:border-slate-800 hover:border-blue-500 transition bg-slate-50 dark:bg-slate-950 flex items-center gap-3">
-              <span className="text-2xl">💱</span>
-              <div>
-                <div className="text-slate-900 dark:text-white font-bold">Dólares a Soles</div>
-                <div className="text-xs text-slate-500 font-normal">Calculadora USD → PEN</div>
+
+              <div className="p-5 rounded-2xl bg-slate-50 dark:bg-slate-950 border border-slate-200 dark:border-slate-800">
+                <span className="text-3xl mb-2 block">🇺🇸</span>
+                <h3 className="font-bold text-slate-900 dark:text-white text-base mb-1">Tasas de la Fed de EE.UU.</h3>
+                <p className="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">
+                  Decisiones de la Reserva Federal de aumentar o recortar tipos de interés alteran el valor global del billete verde a nivel internacional.
+                </p>
               </div>
-            </Link>
-          </div>
-        </section>
+            </div>
+          </section>
+
+          <section className="space-y-4">
+            <h2 className="text-xl font-extrabold text-slate-950 dark:text-white tracking-tight">
+              ¿Cómo afectan la Cotización Compra y Venta a tu Dinero?
+            </h2>
+            <p>
+              Al realizar transacciones cambarias en bancos o casas de cambio digitales se aplican dos valores:
+            </p>
+            <ul className="list-disc pl-5 space-y-2 text-sm">
+              <li>
+                <strong>Tasa de Compra (Bid):</strong> Es el precio al que la entidad cambiaria adquiere tus dólares a cambio de soles. Para convertir tus dólares a soles, consulta <Link href="/dolares-a-soles" className="text-blue-600 dark:text-blue-400 font-bold hover:underline">Dólares a Soles</Link>.
+              </li>
+              <li>
+                <strong>Tasa de Venta (Ask):</strong> Es el precio al que la entidad cambiaria te vende dólares a cambio de soles. Para comprar dólares con tus soles, utiliza <Link href="/soles-a-dolares" className="text-blue-600 dark:text-blue-400 font-bold hover:underline">Soles a Dólares</Link>.
+              </li>
+              <li>
+                <strong>Tasa SUNAT Oficial:</strong> Para la emisión de facturas y contabilidad ante la entidad tributaria, consulta <Link href="/tipo-de-cambio-sunat" className="text-blue-600 dark:text-blue-400 font-bold hover:underline">Tipo de Cambio SUNAT</Link>.
+              </li>
+            </ul>
+          </section>
+
+          <section className="space-y-4">
+            <h2 className="text-xl font-extrabold text-slate-950 dark:text-white tracking-tight">
+              Preguntas Frecuentes sobre la Cotización del Dólar
+            </h2>
+            <div className="space-y-4 text-sm">
+              <div className="border-b border-slate-200 dark:border-slate-800 pb-3">
+                <h3 className="font-bold text-slate-900 dark:text-white mb-1">
+                  ¿Dónde consultar el precio del dólar hoy en vivo?
+                </h3>
+                <p className="text-slate-600 dark:text-slate-400 text-xs">
+                  Puedes ingresar a nuestra página <Link href="/dolar-hoy" className="text-blue-600 dark:text-blue-400 font-bold hover:underline">Dólar Hoy en Perú</Link> para monitorear el precio de compra y venta interbancario actualizado en tiempo real.
+                </p>
+              </div>
+
+              <div>
+                <h3 className="font-bold text-slate-900 dark:text-white mb-1">
+                  ¿Qué tasa aplica para liquidación de deudas contractuales?
+                </h3>
+                <p className="text-slate-600 dark:text-slate-400 text-xs">
+                  Para deudas u obligaciones expresadas en moneda extranjera según ley peruana, consulta <Link href="/tipo-de-cambio-para-solventar-obligaciones" className="text-blue-600 dark:text-blue-400 font-bold hover:underline">Tipo de Cambio para Solventar Obligaciones</Link>.
+                </p>
+              </div>
+            </div>
+          </section>
+
+          <section className="pt-4 border-t border-slate-200 dark:border-slate-800">
+            <h2 className="text-xl font-extrabold text-slate-950 dark:text-white mb-6">
+              🌐 Red Completa de Calculadoras Cambiarias en Perú
+            </h2>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 text-sm font-semibold">
+              <Link href="/dolar-hoy" className="p-4 rounded-2xl border border-slate-200 dark:border-slate-800 hover:border-blue-500 transition bg-slate-50 dark:bg-slate-950 flex items-center gap-3">
+                <span className="text-2xl">💵</span>
+                <div>
+                  <div className="text-slate-900 dark:text-white font-bold">Dólar Hoy en Perú</div>
+                  <div className="text-xs text-slate-500 font-normal">Cotización en vivo</div>
+                </div>
+              </Link>
+
+              <Link href="/tipo-de-cambio" className="p-4 rounded-2xl border border-slate-200 dark:border-slate-800 hover:border-blue-500 transition bg-slate-50 dark:bg-slate-950 flex items-center gap-3">
+                <span className="text-2xl">🌐</span>
+                <div>
+                  <div className="text-slate-900 dark:text-white font-bold">Tipo de Cambio General</div>
+                  <div className="text-xs text-slate-500 font-normal">Guía conceptual de divisas</div>
+                </div>
+              </Link>
+
+              <Link href="/tipo-de-cambio-sunat" className="p-4 rounded-2xl border border-slate-200 dark:border-slate-800 hover:border-blue-500 transition bg-slate-50 dark:bg-slate-950 flex items-center gap-3">
+                <span className="text-2xl">🇵🇪</span>
+                <div>
+                  <div className="text-slate-900 dark:text-white font-bold">Tipo de Cambio SUNAT</div>
+                  <div className="text-xs text-slate-500 font-normal">Cotización oficial del día</div>
+                </div>
+              </Link>
+
+              <Link href="/dolares-a-soles" className="p-4 rounded-2xl border border-slate-200 dark:border-slate-800 hover:border-blue-500 transition bg-slate-50 dark:bg-slate-950 flex items-center gap-3">
+                <span className="text-2xl">💵</span>
+                <div>
+                  <div className="text-slate-900 dark:text-white font-bold">Dólares a Soles</div>
+                  <div className="text-xs text-slate-500 font-normal">Conversor USD → PEN</div>
+                </div>
+              </Link>
+
+              <Link href="/soles-a-dolares" className="p-4 rounded-2xl border border-slate-200 dark:border-slate-800 hover:border-blue-500 transition bg-slate-50 dark:bg-slate-950 flex items-center gap-3">
+                <span className="text-2xl">💰</span>
+                <div>
+                  <div className="text-slate-900 dark:text-white font-bold">Soles a Dólares</div>
+                  <div className="text-xs text-slate-500 font-normal">Conversor PEN → USD</div>
+                </div>
+              </Link>
+
+              <Link href="/tipo-de-cambio-para-solventar-obligaciones" className="p-4 rounded-2xl border border-slate-200 dark:border-slate-800 hover:border-blue-500 transition bg-slate-50 dark:bg-slate-950 flex items-center gap-3">
+                <span className="text-2xl">⚖️</span>
+                <div>
+                  <div className="text-slate-900 dark:text-white font-bold">Solventar Obligaciones</div>
+                  <div className="text-xs text-slate-500 font-normal">Tasa para cancelación de deudas</div>
+                </div>
+              </Link>
+            </div>
+          </section>
+        </article>
 
       </main>
 

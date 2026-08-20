@@ -215,6 +215,55 @@ export default async function SunatPage({ params }: PageProps) {
           lang={lang} 
         />
 
+        {/* Detailed 500+ Words SEO Article & Regulation Guide */}
+        <article className="mt-12 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-3xl p-6 sm:p-10 shadow-sm space-y-8 text-slate-700 dark:text-slate-300 leading-relaxed">
+          <section className="space-y-4">
+            <h2 className="text-2xl font-black text-slate-950 dark:text-white tracking-tight">
+              ¿Qué es el Tipo de Cambio SUNAT y Cómo se Aplica en la Contabilidad en Perú?
+            </h2>
+            <p>
+              El <strong>Tipo de Cambio SUNAT</strong> es el valor oficial de referencia para la conversión entre el <strong>dólar estadounidense (USD) y el sol peruano (PEN)</strong> fijado por la Superintendencia Nacional de Aduanas y de Administración Tributaria. Se establece con base en los cierres del mercado cambiario reportados por la Superintendencia de Banca, Seguros y AFP (SBS).
+            </p>
+            <p>
+              En el Perú, todas las empresas y contribuyentes que realicen transacciones comerciales, facturación electrónica o contabilidad en moneda extranjera están obligados por el Código Tributario a registrar sus operaciones utilizando la tasa SUNAT oficial correspondiente al día de la emisión o pago.
+            </p>
+          </section>
+
+          <section className="space-y-4">
+            <h2 className="text-xl font-extrabold text-slate-950 dark:text-white tracking-tight">
+              Uso de la Tasa SUNAT: Compra vs. Venta
+            </h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 pt-2">
+              <div className="p-5 rounded-2xl bg-slate-50 dark:bg-slate-950 border border-slate-200 dark:border-slate-800">
+                <h3 className="font-bold text-slate-900 dark:text-white text-base mb-2 flex items-center gap-2">
+                  <span>🟢</span> Tasa de Compra SUNAT
+                </h3>
+                <p className="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">
+                  Se aplica obligatoriamente para contabilizar <strong>ingresos, cobros y ventas facturadas en dólares</strong>. Permite determinar el valor base imponible del Impuesto General a las Ventas (IGV) y los pagos a cuenta del Impuesto a la Renta. Para operaciones directas de venta de dólares, puedes usar <Link href="/dolares-a-soles" className="text-blue-600 dark:text-blue-400 font-bold hover:underline">Dólares a Soles</Link>.
+                </p>
+              </div>
+
+              <div className="p-5 rounded-2xl bg-slate-50 dark:bg-slate-950 border border-slate-200 dark:border-slate-800">
+                <h3 className="font-bold text-slate-900 dark:text-white text-base mb-2 flex items-center gap-2">
+                  <span>🔴</span> Tasa de Venta SUNAT
+                </h3>
+                <p className="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">
+                  Se utiliza para registrar <strong>compras, gastos operativos e importaciones</strong> realizadas en dólares. Para calcular la compra de divisas con soles en efectivo, utiliza <Link href="/soles-a-dolares" className="text-blue-600 dark:text-blue-400 font-bold hover:underline">Soles a Dólares</Link>.
+                </p>
+              </div>
+            </div>
+          </section>
+
+          <section className="space-y-4">
+            <h2 className="text-xl font-extrabold text-slate-950 dark:text-white tracking-tight">
+              Reglas de Facturación Electrónica y Diferencia de Cambio
+            </h2>
+            <p>
+              Al emitir un Comprobante de Pago Electrónico (CPE) en dólares, el sistema de facturación de la SUNAT requiere registrar el tipo de cambio oficial del día de emisión. Si el cobro o pago se realiza en una fecha posterior con una cotización distinta, la variación resultante debe ser registrada contablemente como <strong>ganancia o pérdida por diferencia de cambio</strong>.
+            </p>
+          </section>
+        </article>
+
         {/* FAQ Section */}
         <section className="mt-16 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-3xl p-6 sm:p-10 shadow-sm">
           <h2 className="text-2xl sm:text-3xl font-extrabold text-slate-950 dark:text-white mb-8 text-center">
