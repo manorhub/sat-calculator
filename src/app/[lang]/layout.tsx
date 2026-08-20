@@ -17,6 +17,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://calculadorasat.org'),
   title: "Calculadora SAT - Plataforma Fiscal y Financiera México",
   description: "La mejor plataforma de calculadoras fiscales y financieras de México. Calcula IVA, ISR, Nómina, RESICO, Aguinaldo y más de forma gratuita y al instante.",
 };

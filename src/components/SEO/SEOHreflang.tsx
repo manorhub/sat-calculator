@@ -18,7 +18,6 @@ export default function SEOHreflang() {
 
   return (
     <>
-      <link rel="canonical" href={currentCanonical} />
       <link rel="alternate" hrefLang="es-MX" href={canonicalUrl} />
       <link rel="alternate" hrefLang="en-US" href={englishUrl} />
       <link rel="alternate" hrefLang="x-default" href={canonicalUrl} />
