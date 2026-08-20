@@ -7,16 +7,22 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
-    "test:unit": "npx tsx scripts/test-formulas.ts"
+    "test:unit": "npx tsx scripts/test-formulas.ts",
+    "pages:build": "npx @cloudflare/next-on-pages",
+    "build:cf": "npx opennextjs-cloudflare",
+    "preview:cf": "npm run build:cf && wrangler dev",
+    "deploy:cf": "npm run build:cf && wrangler deploy"
   },
   "dependencies": {
     "@vercel/blob": "^2.5.0",
-    "next": "16.2.10",
+    "next": "^16.2.11",
     "next-themes": "^0.4.6",
     "react": "19.2.4",
     "react-dom": "19.2.4"
   },
   "devDependencies": {
+    "@cloudflare/next-on-pages": "^1.13.16",
+    "@opennextjs/cloudflare": "^1.20.2",
     "@tailwindcss/postcss": "^4",
     "@types/node": "^20",
     "@types/react": "^19",
@@ -24,6 +30,7 @@
     "eslint": "^9",
     "eslint-config-next": "16.2.10",
     "tailwindcss": "^4",
-    "typescript": "^5"
+    "typescript": "^5",
+    "wrangler": "^4.124.0"
   }
 }
