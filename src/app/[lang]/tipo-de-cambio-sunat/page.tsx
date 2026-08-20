@@ -3,6 +3,7 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import LanguageSelector from '@/components/LanguageSelector';
 import ThemeToggle from '@/components/ThemeToggle';
+import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import SunatCalculatorClient from './SunatCalculatorClient';
 import { getSunatExchangeRate, getSunatHistoricalRatesList } from '@/lib/sunat-exchange-rate';
@@ -165,21 +166,7 @@ export default async function SunatPage({ params }: PageProps) {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
       />
 
-      {/* Header */}
-      <header className="bg-white dark:bg-slate-900 border-b border-slate-200 dark:border-slate-800 py-4">
-        <div className="max-w-6xl mx-auto px-4 flex flex-col sm:flex-row justify-between items-center gap-4">
-          <Link href={lang === 'en' ? '/en' : '/'} className="font-extrabold text-xl text-slate-900 dark:text-white hover:opacity-90 transition">
-            Calculadora<span className="text-blue-600">SAT</span>
-          </Link>
-          <div className="flex items-center gap-4">
-            <Link href={lang === 'en' ? '/en' : '/'} className="text-sm font-bold text-blue-600 dark:text-blue-400 hover:underline">
-              ← {lang === 'en' ? 'Back to Calculators' : 'Regresar al Inicio'}
-            </Link>
-            <ThemeToggle />
-            <LanguageSelector />
-          </div>
-        </div>
-      </header>
+      <Header lang={lang} />
 
       {/* Main Container */}
       <main className="max-w-6xl mx-auto px-4 py-8">

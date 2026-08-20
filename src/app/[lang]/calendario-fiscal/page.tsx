@@ -2,8 +2,9 @@
 
 import React, { useState, use } from 'react';
 import Link from 'next/link';
-import LanguageSelector from '../../../components/LanguageSelector';
-import ThemeToggle from '../../../components/ThemeToggle';
+import LanguageSelector from '@/components/LanguageSelector';
+import ThemeToggle from '@/components/ThemeToggle';
+import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 
 interface PageProps {
@@ -199,21 +200,7 @@ export default function CalendarioFiscal({ params }: PageProps) {
 
   return (
     <div className="bg-slate-50 dark:bg-slate-950 min-h-screen text-slate-900 dark:text-slate-100 font-sans">
-      {/* Header */}
-      <header className="bg-white dark:bg-slate-900 border-b border-slate-200 dark:border-slate-800 py-6">
-        <div className="max-w-6xl mx-auto px-4 flex flex-col sm:flex-row justify-between items-center gap-4">
-          <Link href={lang === 'en' ? '/en' : '/'} className="font-extrabold text-xl text-slate-900 dark:text-white hover:opacity-90 transition">
-            Calculadora<span className="text-blue-600">SAT</span>
-          </Link>
-          <div className="flex items-center space-x-4 sm:space-x-6">
-            <Link href={lang === 'en' ? '/en' : '/'} className="text-sm font-semibold text-blue-600 dark:text-blue-400 hover:underline whitespace-nowrap">
-              {lang === 'en' ? '← Back to Calculators' : '← Regresar a Calculadoras'}
-            </Link>
-            <ThemeToggle />
-            <LanguageSelector />
-          </div>
-        </div>
-      </header>
+      <Header lang={lang} />
 
       <main className="max-w-6xl mx-auto px-4 py-12">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">

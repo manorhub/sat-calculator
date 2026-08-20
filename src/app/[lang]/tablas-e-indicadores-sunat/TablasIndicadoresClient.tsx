@@ -80,7 +80,7 @@ export default function TablasIndicadoresClient({ initialRate }: Props) {
           📜 Histórico del Valor de la UIT en Perú
         </h2>
         <div className="overflow-x-auto">
-          <table className="w-full text-left border-collapse">
+          <table className="w-full min-w-[600px] text-left border-collapse">
             <thead>
               <tr className="border-b border-slate-100 dark:border-slate-850 bg-slate-50/50 dark:bg-slate-950/20 text-xs font-bold uppercase tracking-wider text-slate-500">
                 <th className="py-3.5 px-6">Año</th>
@@ -117,7 +117,7 @@ export default function TablasIndicadoresClient({ initialRate }: Props) {
           🏛️ Tramos del Impuesto a la Renta de Trabajo (4ta y 5ta Categoría)
         </h2>
         <div className="overflow-x-auto">
-          <table className="w-full text-left border-collapse">
+          <table className="w-full min-w-[600px] text-left border-collapse">
             <thead>
               <tr className="border-b border-slate-100 dark:border-slate-850 bg-slate-50/50 dark:bg-slate-950/20 text-xs font-bold uppercase tracking-wider text-slate-500">
                 <th className="py-3.5 px-6">Tramo de Renta Neta Imponible</th>

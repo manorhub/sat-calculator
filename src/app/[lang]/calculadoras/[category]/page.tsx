@@ -5,7 +5,7 @@ import { getCalculatorsByCategory } from '../../../../calculators';
 import dynamic from 'next/dynamic';
 const AIAssistant = dynamic(() => import('../../../../components/AI/AIAssistant'));
 import LanguageSelector from '../../../../components/LanguageSelector';
-import ThemeToggle from '@/components/ThemeToggle';
+import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 
 interface PageProps {
@@ -199,26 +199,7 @@ export default async function CategoryPage({ params }: PageProps) {
 
   return (
     <div className="bg-slate-50 dark:bg-slate-950 min-h-screen text-slate-900 dark:text-slate-100 font-sans flex flex-col justify-between">
-      {/* Navigation Header */}
-      <header className="bg-white dark:bg-slate-900 border-b border-slate-200 dark:border-slate-800 py-4 shadow-sm">
-        <div className="max-w-6xl mx-auto px-4 flex flex-col sm:flex-row justify-between items-center gap-4">
-          <Link href={lang === 'en' ? '/en' : '/'} className="font-extrabold text-xl text-slate-900 dark:text-white hover:opacity-90 transition">
-            Calculadora<span className="text-blue-600">SAT</span>
-          </Link>
-          <div className="flex items-center space-x-4 sm:space-x-6">
-            <nav className="flex space-x-4 sm:space-x-6">
-              <Link href={lang === 'en' ? '/en' : '/'} className="text-sm font-bold text-slate-600 dark:text-slate-300 hover:text-blue-600 dark:hover:text-blue-400 transition whitespace-nowrap">
-                {lang === 'en' ? '🏠 Home' : '🏠 Inicio'}
-              </Link>
-              <Link href={lang === 'en' ? '/en/calendario-fiscal' : '/calendario-fiscal'} className="text-sm font-bold text-slate-600 dark:text-slate-300 hover:text-blue-600 dark:hover:text-blue-400 transition whitespace-nowrap">
-                📅 {lang === 'en' ? 'Tax Calendar' : 'Calendario Fiscal'}
-              </Link>
-            </nav>
-            <ThemeToggle />
-            <LanguageSelector />
-          </div>
-        </div>
-      </header>
+      <Header lang={lang} />
 
       {/* Hero Header */}
       <section className="bg-gradient-to-b from-blue-600 to-indigo-700 text-white py-12 sm:py-16">

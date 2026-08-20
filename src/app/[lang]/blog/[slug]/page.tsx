@@ -4,6 +4,7 @@ import React, { useState, useEffect, use } from 'react';
 import Link from 'next/link';
 import LanguageSelector from '../../../../components/LanguageSelector';
 import ThemeToggle from '@/components/ThemeToggle';
+import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import esDict from '../../../../dictionaries/es.json';
 import enDict from '../../../../dictionaries/en.json';
@@ -77,26 +78,7 @@ export default function BlogPostPage({ params }: { params: Promise<{ lang: strin
   return (
     <div className="bg-slate-50 dark:bg-slate-950 min-h-screen text-slate-900 dark:text-slate-100 font-sans flex flex-col transition-colors duration-250">
       
-      {/* Navigation Header */}
-      <header className="bg-white dark:bg-slate-900 border-b border-slate-200 dark:border-slate-800 py-4 shadow-sm">
-        <div className="max-w-6xl mx-auto px-4 flex flex-col sm:flex-row justify-between items-center gap-4">
-          <Link href={lang === 'en' ? '/en' : '/'} className="font-extrabold text-xl text-slate-900 dark:text-white hover:opacity-90 transition">
-            Calculadora<span className="text-blue-600">SAT</span>
-          </Link>
-          <div className="flex items-center gap-3 sm:gap-4">
-            <nav className="flex space-x-4 sm:space-x-6">
-              <Link href={lang === 'en' ? '/en/calendario-fiscal' : '/calendario-fiscal'} className="text-sm font-bold text-slate-600 dark:text-slate-350 hover:text-blue-600 dark:hover:text-blue-400 transition flex items-center gap-1">
-                📅 {dict.nav.calendar}
-              </Link>
-              <Link href={lang === 'en' ? '/en/blog' : '/blog'} className="text-sm font-extrabold text-blue-600 dark:text-blue-400 transition flex items-center gap-1">
-                ✍️ {dict.nav.blog || 'Blog'}
-              </Link>
-            </nav>
-            <ThemeToggle />
-            <LanguageSelector />
-          </div>
-        </div>
-      </header>
+      <Header lang={lang} />
 
       {/* Main Content Area */}
       <main className="max-w-3xl mx-auto px-4 py-12 flex-grow w-full">

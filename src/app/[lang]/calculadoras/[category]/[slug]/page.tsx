@@ -66,6 +66,9 @@ export async function generateMetadata({ params }: PageProps) {
   };
 }
 
+import Header from '@/components/Header';
+import Footer from '@/components/Footer';
+
 export default async function CalculatorPage({ params }: PageProps) {
   const resolvedParams = await params;
   const lang = resolvedParams.lang === 'en' ? 'en' : 'es';
@@ -76,16 +79,18 @@ export default async function CalculatorPage({ params }: PageProps) {
   }
 
   const calculator = getLocalizedConfig(baseCalculator, lang);
-  const currentUrl = `https://calculadorasat.org/${lang === 'en' ? 'en/' : ''}calculadoras/${resolvedParams.category}/${resolvedParams.slug}`;
+  const currentUrl = `https://www.calculadorasat.org/${lang === 'en' ? 'en/' : ''}calculadoras/${resolvedParams.category}/${resolvedParams.slug}`;
 
   return (
-    <main className="min-h-screen bg-slate-50 dark:bg-slate-950 py-12">
-      {/* Dynamic SEO JSON-LD Schemas */}
-      <RichSnippets config={calculator} url={currentUrl} />
+    <div className="bg-slate-50 dark:bg-slate-950 min-h-screen text-slate-900 dark:text-slate-100 font-sans flex flex-col justify-between">
+      <Header lang={lang} />
 
-      {/* Navigation Breadcrumbs & Language Selector */}
-      <div className="max-w-6xl mx-auto px-4 mb-6 flex flex-col sm:flex-row sm:justify-between sm:items-center gap-4">
-        <nav className="flex text-sm text-slate-500 dark:text-slate-400">
+      <main className="max-w-6xl mx-auto px-4 py-8 w-full flex-grow">
+        {/* Dynamic SEO JSON-LD Schemas */}
+        <RichSnippets config={calculator} url={currentUrl} />
+
+        {/* Navigation Breadcrumbs */}
+        <nav className="flex text-sm text-slate-500 dark:text-slate-400 mb-6">
           <Link href={lang === 'en' ? '/en' : '/'} className="hover:text-blue-600 transition-colors">
             {lang === 'en' ? 'Home' : 'Inicio'}
           </Link>
@@ -98,17 +103,15 @@ export default async function CalculatorPage({ params }: PageProps) {
             {calculator.title}
           </span>
         </nav>
-        <div className="flex items-center gap-3">
-          <ThemeToggle />
-          <LanguageSelector />
-        </div>
-      </div>
 
-      {/* Main Engine Component */}
-      <CalculatorEngine slug={resolvedParams.slug} lang={lang} />
+        {/* Main Engine Component */}
+        <CalculatorEngine slug={resolvedParams.slug} lang={lang} />
 
-      {/* Contextual AI Assistant Drawer */}
-      <AIAssistant activeCalculatorContext={calculator.title} />
-    </main>
+        {/* Contextual AI Assistant Drawer */}
+        <AIAssistant activeCalculatorContext={calculator.title} />
+      </main>
+
+      <Footer lang={lang} />
+    </div>
   );
 }
