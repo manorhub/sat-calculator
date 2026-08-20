@@ -95,7 +95,10 @@ export default function Home({ params }: { params: Promise<{ lang: string }> }) 
             Calculadora<span className="text-blue-600">SAT</span>
           </Link>
           <div className="flex items-center gap-3 sm:gap-4">
-            <nav className="flex space-x-4 sm:space-x-6">
+            <nav className="flex space-x-3 sm:space-x-5">
+              <Link href="/dolar-hoy" className="text-sm font-bold text-blue-600 dark:text-blue-400 hover:underline transition flex items-center gap-1 whitespace-nowrap">
+                💵 Dólar Hoy Perú
+              </Link>
               <Link href="/tipo-de-cambio-sunat" className="text-sm font-bold text-slate-600 dark:text-slate-350 hover:text-blue-600 dark:hover:text-blue-400 transition flex items-center gap-1 whitespace-nowrap">
                 🇵🇪 Tipo de Cambio SUNAT
               </Link>
@@ -139,6 +142,20 @@ export default function Home({ params }: { params: Promise<{ lang: string }> }) 
               <div className="absolute right-4 top-1/2 -translate-y-1/2 text-slate-400">
                 🔍
               </div>
+            </div>
+
+            {/* Quick Access Badges for Currency Features */}
+            <div className="mt-4 flex flex-wrap items-center justify-center gap-2 text-xs font-bold">
+              <span className="text-blue-200">Destacados:</span>
+              <Link href="/dolar-hoy" className="px-3 py-1 rounded-full bg-white/15 hover:bg-white/25 text-white transition backdrop-blur-sm border border-white/20">
+                💵 Dólar Hoy en Perú
+              </Link>
+              <Link href="/tipo-de-cambio-sunat" className="px-3 py-1 rounded-full bg-white/15 hover:bg-white/25 text-white transition backdrop-blur-sm border border-white/20">
+                🇵🇪 Tipo de Cambio SUNAT
+              </Link>
+              <Link href="/dolares-a-soles" className="px-3 py-1 rounded-full bg-white/15 hover:bg-white/25 text-white transition backdrop-blur-sm border border-white/20">
+                💱 Dólares a Soles
+              </Link>
             </div>
           </div>
         </div>
