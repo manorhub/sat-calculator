@@ -1,18 +1,24 @@
 # Calculadora SAT & Herramientas Fiscales / Financieras
 
-> Calculadora SAT (calculadorasat.org) es una plataforma gratuita de herramientas fiscales, contables, financieras y conversiones de tipo de cambio para México (SAT / Banxico) y Perú (SUNAT / Mercado Interbancario).
+> Calculadora SAT (calculadorasat.org) es una plataforma gratuita de herramientas fiscales, contables, financieras, formatos de RH y conversiones de tipo de cambio para México (SAT / Banxico) y Perú (SUNAT / Mercado Interbancario).
+
+## Herramientas Destacadas y Recursos RH
+
+- [/semanas-cotizadas-imss](https://calculadorasat.org/semanas-cotizadas-imss): Calculadora de Semanas Cotizadas IMSS, Salario Diario Integrado (SDI) y estimación de pensión Ley 73 y Ley 97.
+- [/formatos](https://calculadorasat.org/formatos): Formatos y plantillas descargables gratuitas para Recursos Humanos (Carta de Renuncia Voluntaria, Recibo de Finiquito, Convenio Laboral).
+- [/widgets](https://calculadorasat.org/widgets): Widgets interactivos gratuitos de calculadoras de IVA, Dólar Hoy, Salario Neto y CETES para webmasters y blogs.
 
 ## Cluster Dólar & Tipo de Cambio Perú
 
 - [/dolar-hoy](https://calculadorasat.org/dolar-hoy): Dólar Hoy en Perú. Cotización de compra y venta en tiempo real del mercado interbancario, tipo de cambio SUNAT oficial, convertidor instantáneo USD/PEN y gráfico histórico.
-- [/precio-del-dolar-en-peru](https://calculadorasat.org/precio-del-dolar-en-peru): Precio del Dólar en Perú Hoy. Cotización USD/PEN, factores macroeconómicos (cobre, intervenciones BCRP, decisiones de la Fed) y análisis cambiario.
-- [/tipo-de-cambio](https://calculadorasat.org/tipo-de-cambio): Tipo de Cambio Hoy en Perú. Guía completa sobre el funcionamiento del mercado cambiario, diferencia entre compra/venta y cotización SUNAT.
-- [/tipo-de-cambio-sunat](https://calculadorasat.org/tipo-de-cambio-sunat): Tipo de Cambio SUNAT Hoy. Cotización oficial de compra y venta fijada por la SUNAT en Perú, datos históricos e impuestos.
-- [/dolares-a-soles](https://calculadorasat.org/dolares-a-soles): Calculadora Dólares a Soles (USD a PEN) con tasa de mercado, SUNAT o personalizada.
-- [/soles-a-dolares](https://calculadorasat.org/soles-a-dolares): Calculadora Soles a Dólares (PEN a USD) con tasa de mercado, SUNAT o personalizada.
-- [/tipo-de-cambio-para-solventar-obligaciones](https://calculadorasat.org/tipo-de-cambio-para-solventar-obligaciones): Calculadora del tipo de cambio legal para cancelar deudas y tributos en moneda extranjera según el Código Tributario peruano.
-- [/consulta-ruc-sunat](https://calculadorasat.org/consulta-ruc-sunat): Guía de consulta de RUC ante la SUNAT y validador de 11 dígitos con algoritmo Módulo 11.
-- [/tablas-e-indicadores-sunat](https://calculadorasat.org/tablas-e-indicadores-sunat): Tablas oficiales e indicadores tributarios de Perú, histórico de la UIT (2023-2026: S/ 5,350 en 2026) y escalas del Impuesto a la Renta.
+- [/precio-del-dolar-en-peru](https://calculadorasat.org/precio-del-dolar-en-peru): Precio del Dólar en Perú Hoy. Cotización USD/PEN y factores macroeconómicos.
+- [/tipo-de-cambio](https://calculadorasat.org/tipo-de-cambio): Tipo de Cambio Hoy en Perú. Guía completa sobre el funcionamiento del mercado cambiario.
+- [/tipo-de-cambio-sunat](https://calculadorasat.org/tipo-de-cambio-sunat): Tipo de Cambio SUNAT Hoy. Cotización oficial de compra y venta fijada por la SUNAT en Perú.
+- [/dolares-a-soles](https://calculadorasat.org/dolares-a-soles): Calculadora Dólares a Soles (USD a PEN).
+- [/soles-a-dolares](https://calculadorasat.org/soles-a-dolares): Calculadora Soles a Dólares (PEN a USD).
+- [/tipo-de-cambio-para-solventar-obligaciones](https://calculadorasat.org/tipo-de-cambio-para-solventar-obligaciones): Calculadora del tipo de cambio legal para cancelar deudas y tributos en moneda extranjera.
+- [/consulta-ruc-sunat](https://calculadorasat.org/consulta-ruc-sunat): Guía de consulta de RUC ante la SUNAT y validador de 11 dígitos con Módulo 11.
+- [/tablas-e-indicadores-sunat](https://calculadorasat.org/tablas-e-indicadores-sunat): Tablas oficiales e indicadores tributarios de Perú, histórico de la UIT (2023-2026: S/ 5,350 en 2026).
 
 ## Herramientas Fiscales SAT México
 
@@ -35,6 +41,7 @@
 
 ## Finanzas, Créditos e Inversiones
 
+- [/calculadoras/finanzas-personales/calculadora-pago-tarjeta-credito](https://calculadorasat.org/calculadoras/finanzas-personales/calculadora-pago-tarjeta-credito): Calculadora de Pago Mínimo e Intereses de Tarjeta de Crédito.
 - [/calculadoras/inversiones/calculadora-cetes](https://calculadorasat.org/calculadoras/inversiones/calculadora-cetes): Calculadora de Rendimientos en CETES Directo.
 - [/calculadoras/creditos/calculadora-credito-hipotecario](https://calculadorasat.org/calculadoras/creditos/calculadora-credito-hipotecario): Calculadora de Amortización de Crédito Hipotecario.
 - [/calculadoras/creditos/calculadora-prestamo-personal](https://calculadorasat.org/calculadoras/creditos/calculadora-prestamo-personal): Calculadora de Préstamo Personal y Tabla de Amortización.

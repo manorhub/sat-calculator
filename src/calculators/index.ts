@@ -30,6 +30,8 @@ import { consultaRucSunatCalculator } from './conversiones/consulta-ruc-sunat';
 import { tablasEIndicadoresSunatCalculator } from './conversiones/tablas-e-indicadores-sunat';
 import { dolarHoyCalculator } from './conversiones/dolar-hoy';
 import { precioDelDolarEnPeruCalculator } from './conversiones/precio-del-dolar-en-peru';
+import { semanasCotizadasImssCalculator } from './nomina/semanas-cotizadas-imss';
+import { pagoTarjetaCreditoCalculator } from './finanzas-personales/pago-tarjeta-credito';
 
 export const calculators: CalculatorConfig[] = [
   ivaCalculator,
@@ -42,10 +44,12 @@ export const calculators: CalculatorConfig[] = [
   aguinaldoCalculator,
   finiquitoCalculator,
   ptuCalculator,
+  semanasCotizadasImssCalculator,
   cetesCalculator,
   hipotecarioCalculator,
   compoundInterestCalculator,
   rule503020Calculator,
+  pagoTarjetaCreditoCalculator,
   breakEvenCalculator,
   umaCalculator,
   prestamoCalculator,

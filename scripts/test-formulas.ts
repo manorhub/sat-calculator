@@ -320,6 +320,28 @@ if (precioDolarCalc) {
   failedTests++;
 }
 
+// 24. Test Semanas Cotizadas IMSS
+const semanasImssCalc = calculators.find(c => c.id === 'semanas-cotizadas-imss');
+if (semanasImssCalc) {
+  const res = semanasImssCalc.calculate({ anos_trabajados: 10, salario_diario: 500, edad_retiro: 65, ley_imss: 'ley73' });
+  const semanas = res.results.find(r => r.label === 'Semanas Cotizadas Estimadas')?.value;
+  assert(semanas === 520, 'Semanas Cotizadas IMSS: 10 años de trabajo equivalen a 520 semanas');
+} else {
+  console.error('No se encontró la calculadora de Semanas Cotizadas IMSS.');
+  failedTests++;
+}
+
+// 25. Test Pago Tarjeta de Crédito
+const tarjetaCalc = calculators.find(c => c.id === 'pago-tarjeta-credito');
+if (tarjetaCalc) {
+  const res = tarjetaCalc.calculate({ saldo_tarjeta: 10000, tasa_interes_anual: 36, modo_pago: 'pago_fijo', monto_pago_fijo: 1000 });
+  const meses = res.results.find(r => r.label === 'Meses Requeridos para Liquidar')?.value;
+  assert(typeof meses === 'number' && meses > 0, 'Pago Tarjeta de Crédito: Calculó exitosamente el periodo de liquidación');
+} else {
+  console.error('No se encontró la calculadora de Tarjeta de Crédito.');
+  failedTests++;
+}
+
 console.log(`\n========================================`);
 console.log(`RESULTADOS DE LAS PRUEBAS UNITARIAS:`);
 console.log(`PASARON: ${passedTests} de ${passedTests + failedTests}`);
