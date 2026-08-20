@@ -34,6 +34,8 @@ function getLocalizedConfig(config: any, lang: string) {
   };
 }
 
+import { getSeoAlternates } from '@/lib/seo';
+
 export async function generateMetadata({ params }: PageProps) {
   const resolvedParams = await params;
   const lang = resolvedParams.lang === 'en' ? 'en' : 'es';
@@ -47,11 +49,20 @@ export async function generateMetadata({ params }: PageProps) {
   }
 
   const calculator = getLocalizedConfig(baseCalculator, lang);
+  const seoAlternates = getSeoAlternates(`calculadoras/${resolvedParams.category}/${resolvedParams.slug}`, lang);
 
   return {
     title: calculator.seo.metaTitle,
     description: calculator.seo.metaDescription,
     keywords: calculator.seo.keywords.join(', '),
+    alternates: seoAlternates,
+    openGraph: {
+      title: calculator.seo.metaTitle,
+      description: calculator.seo.metaDescription,
+      url: seoAlternates.canonical,
+      siteName: 'Calculadora SAT',
+      type: 'website',
+    },
   };
 }
 

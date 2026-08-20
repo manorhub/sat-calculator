@@ -12,10 +12,12 @@ interface PageProps {
   }>;
 }
 
+import { getSeoAlternates } from '@/lib/seo';
+
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
   const resolvedParams = await params;
   const lang = resolvedParams.lang === 'en' ? 'en' : 'es';
-  const canonicalUrl = `https://calculadorasat.org${lang === 'en' ? '/en' : ''}/calculadora-quinta-categoria-peru`;
+  const seoAlternates = getSeoAlternates('calculadora-quinta-categoria-peru', lang);
 
   return {
     title: 'Calculadora Renta de 5ta Categoría 2026 Perú | SUNAT',
@@ -27,13 +29,11 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
       'retencion quinta categoria sunat',
       'deduccion 7 uit 2026'
     ],
-    alternates: {
-      canonical: canonicalUrl,
-    },
+    alternates: seoAlternates,
     openGraph: {
       title: 'Calculadora Renta de 5ta Categoría 2026 Perú | SUNAT',
       description: 'Calcula la retención mensual del Impuesto a la Renta de 5ta Categoría en Perú deduciendo las 7 UIT vigentes.',
-      url: canonicalUrl,
+      url: seoAlternates.canonical,
       siteName: 'Calculadora SAT',
       locale: 'es_PE',
       type: 'website',

@@ -12,10 +12,12 @@ interface PageProps {
   }>;
 }
 
+import { getSeoAlternates } from '@/lib/seo';
+
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
   const resolvedParams = await params;
   const lang = resolvedParams.lang === 'en' ? 'en' : 'es';
-  const canonicalUrl = `https://calculadorasat.org${lang === 'en' ? '/en' : ''}/consulta-ruc-sunat`;
+  const seoAlternates = getSeoAlternates('consulta-ruc-sunat', lang);
 
   return {
     title: 'Consulta RUC SUNAT: Cómo Consultar un RUC',
@@ -27,13 +29,11 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
       'consultar ruc',
       'validar ruc Perú'
     ],
-    alternates: {
-      canonical: canonicalUrl,
-    },
+    alternates: seoAlternates,
     openGraph: {
       title: 'Consulta RUC SUNAT: Cómo Consultar un RUC',
       description: 'Aprende cómo consultar un RUC en SUNAT, qué información puedes verificar y dónde realizar la consulta oficial.',
-      url: canonicalUrl,
+      url: seoAlternates.canonical,
       siteName: 'Calculadora SAT',
       locale: 'es_PE',
       type: 'website',

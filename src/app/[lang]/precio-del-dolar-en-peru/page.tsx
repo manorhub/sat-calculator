@@ -13,11 +13,12 @@ interface PageProps {
     lang: string;
   }>;
 }
+import { getSeoAlternates } from '@/lib/seo';
 
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
   const resolvedParams = await params;
   const lang = resolvedParams.lang === 'en' ? 'en' : 'es';
-  const canonicalUrl = `https://calculadorasat.org${lang === 'en' ? '/en' : ''}/precio-del-dolar-en-peru`;
+  const seoAlternates = getSeoAlternates('precio-del-dolar-en-peru', lang);
 
   return {
     title: 'Precio del Dólar en Perú Hoy: Cotización USD/PEN',
@@ -30,13 +31,11 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
       'precio del dólar hoy Perú',
       'cotización del dólar en Perú'
     ],
-    alternates: {
-      canonical: canonicalUrl,
-    },
+    alternates: seoAlternates,
     openGraph: {
       title: 'Precio del Dólar en Perú Hoy: Cotización USD/PEN',
       description: 'Conoce el precio del dólar en Perú hoy, cotización de compra y venta, factores que influyen en el sol peruano y convertidor de divisas.',
-      url: canonicalUrl,
+      url: seoAlternates.canonical,
       siteName: 'Calculadora SAT',
       locale: 'es_PE',
       type: 'website',

@@ -12,10 +12,12 @@ interface PageProps {
   }>;
 }
 
+import { getSeoAlternates } from '@/lib/seo';
+
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
   const resolvedParams = await params;
   const lang = resolvedParams.lang === 'en' ? 'en' : 'es';
-  const canonicalUrl = `https://calculadorasat.org${lang === 'en' ? '/en' : ''}/calculadora-igv-peru`;
+  const seoAlternates = getSeoAlternates('calculadora-igv-peru', lang);
 
   return {
     title: 'Calculadora de IGV Perú 18% | Desglosar y Agregar IGV SUNAT',
@@ -28,13 +30,11 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
       'igv sunat',
       'sacar el igv de un monto'
     ],
-    alternates: {
-      canonical: canonicalUrl,
-    },
+    alternates: seoAlternates,
     openGraph: {
       title: 'Calculadora de IGV Perú 18% | Desglosar y Agregar IGV SUNAT',
       description: 'Calcula el 18% de IGV en Perú. Desglosa el impuesto de un total o agrégalo a la base imponible de forma rápida.',
-      url: canonicalUrl,
+      url: seoAlternates.canonical,
       siteName: 'Calculadora SAT',
       locale: 'es_PE',
       type: 'website',

@@ -12,11 +12,12 @@ interface PageProps {
     lang: string;
   }>;
 }
+import { getSeoAlternates } from '@/lib/seo';
 
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
   const resolvedParams = await params;
   const lang = resolvedParams.lang === 'en' ? 'en' : 'es';
-  const canonicalUrl = `https://calculadorasat.org${lang === 'en' ? '/en' : ''}/tablas-e-indicadores-sunat`;
+  const seoAlternates = getSeoAlternates('tablas-e-indicadores-sunat', lang);
 
   return {
     title: 'Tablas e Indicadores SUNAT: UIT y Valores Tributarios Perú',
@@ -29,13 +30,11 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
       'valores tributarios SUNAT',
       'UIT Perú 2026'
     ],
-    alternates: {
-      canonical: canonicalUrl,
-    },
+    alternates: seoAlternates,
     openGraph: {
       title: 'Tablas e Indicadores SUNAT: UIT y Valores Tributarios Perú',
       description: 'Consulta el valor de la UIT en Perú, tablas tributarias del Impuesto a la Renta, tasas e indicadores oficiales fijados por SUNAT y el MEF.',
-      url: canonicalUrl,
+      url: seoAlternates.canonical,
       siteName: 'Calculadora SAT',
       locale: 'es_PE',
       type: 'website',

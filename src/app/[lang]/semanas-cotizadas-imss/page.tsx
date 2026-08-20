@@ -12,10 +12,12 @@ interface PageProps {
   }>;
 }
 
+import { getSeoAlternates } from '@/lib/seo';
+
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
   const resolvedParams = await params;
   const lang = resolvedParams.lang === 'en' ? 'en' : 'es';
-  const canonicalUrl = `https://calculadorasat.org${lang === 'en' ? '/en' : ''}/semanas-cotizadas-imss`;
+  const seoAlternates = getSeoAlternates('semanas-cotizadas-imss', lang);
 
   return {
     title: 'Semanas Cotizadas IMSS y Pensión Ley 73 | Calculadora 2026',
@@ -27,13 +29,11 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
       'calcular semanas imss',
       'salario diario integrado imss'
     ],
-    alternates: {
-      canonical: canonicalUrl,
-    },
+    alternates: seoAlternates,
     openGraph: {
       title: 'Semanas Cotizadas IMSS y Pensión Ley 73 | Calculadora 2026',
       description: 'Calcula tus semanas cotizadas en el IMSS, Salario Diario Integrado (SDI) y simula tu pensión estimada por vejez o cesantía.',
-      url: canonicalUrl,
+      url: seoAlternates.canonical,
       siteName: 'Calculadora SAT',
       locale: 'es_MX',
       type: 'website',

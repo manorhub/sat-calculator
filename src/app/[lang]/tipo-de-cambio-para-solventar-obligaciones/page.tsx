@@ -12,11 +12,12 @@ interface PageProps {
     lang: string;
   }>;
 }
+import { getSeoAlternates } from '@/lib/seo';
 
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
   const resolvedParams = await params;
   const lang = resolvedParams.lang === 'en' ? 'en' : 'es';
-  const canonicalUrl = `https://calculadorasat.org${lang === 'en' ? '/en' : ''}/tipo-de-cambio-para-solventar-obligaciones`;
+  const seoAlternates = getSeoAlternates('tipo-de-cambio-para-solventar-obligaciones', lang);
 
   return {
     title: 'Tipo de Cambio para Solventar Obligaciones | SUNAT',
@@ -28,13 +29,11 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
       'tipo de cambio para obligaciones',
       'tipo de cambio dólar para pagos'
     ],
-    alternates: {
-      canonical: canonicalUrl,
-    },
+    alternates: seoAlternates,
     openGraph: {
       title: 'Tipo de Cambio para Solventar Obligaciones | SUNAT',
       description: 'Calcula y consulta el tipo de cambio utilizado para convertir montos relacionados con obligaciones en Perú.',
-      url: canonicalUrl,
+      url: seoAlternates.canonical,
       siteName: 'Calculadora SAT',
       locale: 'es_PE',
       type: 'website',

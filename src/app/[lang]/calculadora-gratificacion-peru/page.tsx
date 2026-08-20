@@ -12,10 +12,12 @@ interface PageProps {
   }>;
 }
 
+import { getSeoAlternates } from '@/lib/seo';
+
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
   const resolvedParams = await params;
   const lang = resolvedParams.lang === 'en' ? 'en' : 'es';
-  const canonicalUrl = `https://calculadorasat.org${lang === 'en' ? '/en' : ''}/calculadora-gratificacion-peru`;
+  const seoAlternates = getSeoAlternates('calculadora-gratificacion-peru', lang);
 
   return {
     title: 'Calculadora de Gratificación Perú 2026 | Julio y Diciembre',
@@ -27,13 +29,11 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
       'gratificacion navidad peru',
       'bonificacion extraordinaria essalud 9'
     ],
-    alternates: {
-      canonical: canonicalUrl,
-    },
+    alternates: seoAlternates,
     openGraph: {
       title: 'Calculadora de Gratificación Perú 2026 | Julio y Diciembre',
       description: 'Calcula tu gratificación legal de Fiestas Patrias (Julio) y Navidad (Diciembre) en Perú.',
-      url: canonicalUrl,
+      url: seoAlternates.canonical,
       siteName: 'Calculadora SAT',
       locale: 'es_PE',
       type: 'website',

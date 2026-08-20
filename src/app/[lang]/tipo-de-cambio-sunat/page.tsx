@@ -12,11 +12,12 @@ interface PageProps {
     lang: string;
   }>;
 }
+import { getSeoAlternates } from '@/lib/seo';
 
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
   const resolvedParams = await params;
   const lang = resolvedParams.lang === 'en' ? 'en' : 'es';
-  const canonicalUrl = `https://calculadorasat.org${lang === 'en' ? '/en' : ''}/tipo-de-cambio-sunat`;
+  const seoAlternates = getSeoAlternates('tipo-de-cambio-sunat', lang);
 
   return {
     title: 'Tipo de Cambio SUNAT Hoy: Dólar a Soles | Calculadora',
@@ -33,13 +34,11 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
       'convertir dólares a soles',
       'convertir soles a dólares'
     ],
-    alternates: {
-      canonical: canonicalUrl,
-    },
+    alternates: seoAlternates,
     openGraph: {
       title: 'Tipo de Cambio SUNAT Hoy: Dólar a Soles | Calculadora',
       description: 'Consulta el tipo de cambio SUNAT de hoy, conoce el precio de compra y venta del dólar y convierte USD a soles peruanos fácilmente.',
-      url: canonicalUrl,
+      url: seoAlternates.canonical,
       siteName: 'Calculadora SAT',
       locale: 'es_PE',
       type: 'website',

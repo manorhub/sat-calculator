@@ -12,11 +12,12 @@ interface PageProps {
     lang: string;
   }>;
 }
+import { getSeoAlternates } from '@/lib/seo';
 
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
   const resolvedParams = await params;
   const lang = resolvedParams.lang === 'en' ? 'en' : 'es';
-  const canonicalUrl = `https://calculadorasat.org${lang === 'en' ? '/en' : ''}/calculadora-soles-a-dolares`;
+  const seoAlternates = getSeoAlternates('calculadora-soles-a-dolares', lang);
 
   return {
     title: 'Calculadora Soles a Dólares: PEN a USD',
@@ -28,13 +29,11 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
       'PEN a USD',
       'sol peruano a dólar'
     ],
-    alternates: {
-      canonical: canonicalUrl,
-    },
+    alternates: seoAlternates,
     openGraph: {
       title: 'Calculadora Soles a Dólares: PEN a USD',
       description: 'Convierte soles peruanos a dólares estadounidenses usando el tipo de cambio que elijas.',
-      url: canonicalUrl,
+      url: seoAlternates.canonical,
       siteName: 'Calculadora SAT',
       locale: 'es_PE',
       type: 'website',

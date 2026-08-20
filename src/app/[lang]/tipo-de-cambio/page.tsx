@@ -13,11 +13,12 @@ interface PageProps {
     lang: string;
   }>;
 }
+import { getSeoAlternates } from '@/lib/seo';
 
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
   const resolvedParams = await params;
   const lang = resolvedParams.lang === 'en' ? 'en' : 'es';
-  const canonicalUrl = `https://calculadorasat.org${lang === 'en' ? '/en' : ''}/tipo-de-cambio`;
+  const seoAlternates = getSeoAlternates('tipo-de-cambio', lang);
 
   return {
     title: 'Tipo de Cambio Hoy en Perú: Dólar, Soles y USD/PEN',
@@ -31,13 +32,11 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
       'tipo de cambio del dólar',
       'tipo de cambio dolar peru'
     ],
-    alternates: {
-      canonical: canonicalUrl,
-    },
+    alternates: seoAlternates,
     openGraph: {
       title: 'Tipo de Cambio Hoy en Perú: Dólar, Soles y USD/PEN',
       description: 'Aprende qué es el tipo de cambio, diferencia entre precio de compra y venta, tasa del mercado vs SUNAT y cómo calcular conversiones cambiarias.',
-      url: canonicalUrl,
+      url: seoAlternates.canonical,
       siteName: 'Calculadora SAT',
       locale: 'es_PE',
       type: 'website',

@@ -12,10 +12,12 @@ interface PageProps {
   }>;
 }
 
+import { getSeoAlternates } from '@/lib/seo';
+
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
   const resolvedParams = await params;
   const lang = resolvedParams.lang === 'en' ? 'en' : 'es';
-  const canonicalUrl = `https://calculadorasat.org${lang === 'en' ? '/en' : ''}/calculadora-cts-peru`;
+  const seoAlternates = getSeoAlternates('calculadora-cts-peru', lang);
 
   return {
     title: 'Calculadora de CTS Perú 2026 | Mayo y Noviembre',
@@ -27,13 +29,11 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
       'deposito cts peru 2026',
       'sexto de gratificacion cts'
     ],
-    alternates: {
-      canonical: canonicalUrl,
-    },
+    alternates: seoAlternates,
     openGraph: {
       title: 'Calculadora de CTS Perú 2026 | Mayo y Noviembre',
       description: 'Calcula el depósito semestral de Compensación por Tiempo de Servicios (CTS) en Perú.',
-      url: canonicalUrl,
+      url: seoAlternates.canonical,
       siteName: 'Calculadora SAT',
       locale: 'es_PE',
       type: 'website',

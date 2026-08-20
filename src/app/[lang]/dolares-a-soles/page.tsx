@@ -12,11 +12,12 @@ interface PageProps {
     lang: string;
   }>;
 }
+import { getSeoAlternates } from '@/lib/seo';
 
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
   const resolvedParams = await params;
   const lang = resolvedParams.lang === 'en' ? 'en' : 'es';
-  const canonicalUrl = `https://calculadorasat.org${lang === 'en' ? '/en' : ''}/dolares-a-soles`;
+  const seoAlternates = getSeoAlternates('dolares-a-soles', lang);
 
   return {
     title: 'Dólares a Soles: Calculadora USD a PEN',
@@ -28,13 +29,11 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
       'dólar a soles peruanos',
       'USD a PEN'
     ],
-    alternates: {
-      canonical: canonicalUrl,
-    },
+    alternates: seoAlternates,
     openGraph: {
       title: 'Dólares a Soles: Calculadora USD a PEN',
       description: 'Convierte dólares a soles peruanos en tiempo real usando la cotización del mercado, el tipo de cambio SUNAT oficial o una tasa personalizada.',
-      url: canonicalUrl,
+      url: seoAlternates.canonical,
       siteName: 'Calculadora SAT',
       locale: 'es_PE',
       type: 'website',

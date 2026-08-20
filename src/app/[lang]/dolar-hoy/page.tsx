@@ -13,11 +13,12 @@ interface PageProps {
     lang: string;
   }>;
 }
+import { getSeoAlternates } from '@/lib/seo';
 
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
   const resolvedParams = await params;
   const lang = resolvedParams.lang === 'en' ? 'en' : 'es';
-  const canonicalUrl = `https://calculadorasat.org${lang === 'en' ? '/en' : ''}/dolar-hoy`;
+  const seoAlternates = getSeoAlternates('dolar-hoy', lang);
 
   return {
     title: 'Dólar Hoy en Perú: Precio del Dólar y Tipo de Cambio',
@@ -34,13 +35,11 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
       'dólar hoy perú',
       'cotización del dólar'
     ],
-    alternates: {
-      canonical: canonicalUrl,
-    },
+    alternates: seoAlternates,
     openGraph: {
       title: 'Dólar Hoy en Perú: Precio del Dólar y Tipo de Cambio',
       description: 'Consulta el dólar hoy en Perú. Precio del dólar de compra y venta en el mercado e información del tipo de cambio SUNAT oficial en tiempo real.',
-      url: canonicalUrl,
+      url: seoAlternates.canonical,
       siteName: 'Calculadora SAT',
       locale: 'es_PE',
       type: 'website',

@@ -12,11 +12,12 @@ interface PageProps {
     lang: string;
   }>;
 }
+import { getSeoAlternates } from '@/lib/seo';
 
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
   const resolvedParams = await params;
   const lang = resolvedParams.lang === 'en' ? 'en' : 'es';
-  const canonicalUrl = `https://calculadorasat.org${lang === 'en' ? '/en' : ''}/calculadora-comisiones-tarjeta-dolares`;
+  const seoAlternates = getSeoAlternates('calculadora-comisiones-tarjeta-dolares', lang);
 
   return {
     title: 'Calculadora de Compras en Dólares con Tarjeta | Comisiones Forex',
@@ -28,13 +29,11 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
       'comision forex tarjeta de credito',
       'cuanto cobra el banco por comprar en dolares'
     ],
-    alternates: {
-      canonical: canonicalUrl,
-    },
+    alternates: seoAlternates,
     openGraph: {
       title: 'Calculadora de Compras en Dólares con Tarjeta | Comisiones Forex',
       description: 'Calcula cuánto te cuesta realmente comprar en dólares con tu tarjeta de crédito o débito bancaria.',
-      url: canonicalUrl,
+      url: seoAlternates.canonical,
       siteName: 'Calculadora SAT',
       locale: 'es_PE',
       type: 'website',

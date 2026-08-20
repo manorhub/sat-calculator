@@ -142,6 +142,8 @@ const categoryTranslations: Record<string, Record<string, { name: string; desc: 
   }
 };
 
+import { getSeoAlternates } from '@/lib/seo';
+
 export async function generateMetadata({ params }: PageProps) {
   const resolvedParams = await params;
   const lang = resolvedParams.lang === 'en' ? 'en' : 'es';
@@ -154,9 +156,19 @@ export async function generateMetadata({ params }: PageProps) {
     };
   }
 
+  const seoAlternates = getSeoAlternates(`calculadoras/${resolvedParams.category}`, lang);
+
   return {
     title: lang === 'en' ? `Calculators for ${categoryInfo.name} 2026 - SAT & Finance` : `Calculadoras de ${categoryInfo.name} 2026 - SAT y Finanzas`,
     description: categoryInfo.desc,
+    alternates: seoAlternates,
+    openGraph: {
+      title: lang === 'en' ? `Calculators for ${categoryInfo.name} 2026 - SAT & Finance` : `Calculadoras de ${categoryInfo.name} 2026 - SAT y Finanzas`,
+      description: categoryInfo.desc,
+      url: seoAlternates.canonical,
+      siteName: 'Calculadora SAT',
+      type: 'website',
+    },
   };
 }
 

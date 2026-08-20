@@ -12,10 +12,12 @@ interface PageProps {
   }>;
 }
 
+import { getSeoAlternates } from '@/lib/seo';
+
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
   const resolvedParams = await params;
   const lang = resolvedParams.lang === 'en' ? 'en' : 'es';
-  const canonicalUrl = `https://calculadorasat.org${lang === 'en' ? '/en' : ''}/widgets`;
+  const seoAlternates = getSeoAlternates('widgets', lang);
 
   return {
     title: 'Widgets de Calculadoras Gratis para Sitios Web y Blogs',
@@ -26,13 +28,11 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
       'widget calculadora iva mexico',
       'widget salario neto blog'
     ],
-    alternates: {
-      canonical: canonicalUrl,
-    },
+    alternates: seoAlternates,
     openGraph: {
       title: 'Widgets de Calculadoras Gratis para Sitios Web y Blogs',
       description: 'Inserta calculadoras gratis de IVA, Dólar Hoy, Salario Neto y CETES en tu sitio web con un sencillo código iframe.',
-      url: canonicalUrl,
+      url: seoAlternates.canonical,
       siteName: 'Calculadora SAT',
       locale: 'es_MX',
       type: 'website',

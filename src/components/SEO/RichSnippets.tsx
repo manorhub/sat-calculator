@@ -50,13 +50,13 @@ export default function RichSnippets({ config, url }: RichSnippetsProps) {
         '@type': 'ListItem',
         position: 1,
         name: 'Inicio',
-        item: typeof window !== 'undefined' ? window.location.origin : 'https://calculadorasat.org',
+        item: typeof window !== 'undefined' ? window.location.origin : 'https://www.calculadorasat.org',
       },
       {
         '@type': 'ListItem',
         position: 2,
         name: config.category,
-        item: `${typeof window !== 'undefined' ? window.location.origin : 'https://calculadorasat.org'}/${config.categorySlug}`,
+        item: `${typeof window !== 'undefined' ? window.location.origin : 'https://www.calculadorasat.org'}/${config.categorySlug}`,
       },
       {
         '@type': 'ListItem',

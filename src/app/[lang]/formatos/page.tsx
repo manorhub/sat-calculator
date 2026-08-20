@@ -12,10 +12,12 @@ interface PageProps {
   }>;
 }
 
+import { getSeoAlternates } from '@/lib/seo';
+
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
   const resolvedParams = await params;
   const lang = resolvedParams.lang === 'en' ? 'en' : 'es';
-  const canonicalUrl = `https://calculadorasat.org${lang === 'en' ? '/en' : ''}/formatos`;
+  const seoAlternates = getSeoAlternates('formatos', lang);
 
   return {
     title: 'Formatos Descargables de RH y Trabajo | Word y PDF Gratis',
@@ -27,13 +29,11 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
       'convenio terminacion laboral pdf',
       'formatos recursos humanos mexico'
     ],
-    alternates: {
-      canonical: canonicalUrl,
-    },
+    alternates: seoAlternates,
     openGraph: {
       title: 'Formatos Descargables de RH y Trabajo | Word y PDF Gratis',
       description: 'Descarga gratis plantillas editables de Carta de Renuncia Voluntaria, Recibo de Finiquito y Convenio Laboral.',
-      url: canonicalUrl,
+      url: seoAlternates.canonical,
       siteName: 'Calculadora SAT',
       locale: 'es_MX',
       type: 'website',
