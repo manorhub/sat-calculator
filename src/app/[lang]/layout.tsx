@@ -24,8 +24,8 @@ export const viewport: Viewport = {
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://www.calculadorasat.org'),
-  title: "Calculadora SAT - Plataforma Fiscal y Financiera México",
-  description: "La mejor plataforma de calculadoras fiscales y financieras de México. Calcula IVA, ISR, Nómina, RESICO, Aguinaldo y más de forma gratuita y al instante.",
+  title: "🧮 Calculadora SAT 2026 — IVA, ISR, RESICO y Nómina Gratis Online",
+  description: "Plataforma de calculadoras fiscales y financieras 2026. Calcula IVA (16% u 8%), ISR Personas Físicas y Morales, RESICO, Recargos, Aguinaldo y Tipo de Cambio gratis.",
 };
 
 export default async function RootLayout({

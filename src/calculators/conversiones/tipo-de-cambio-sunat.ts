@@ -8,8 +8,8 @@ export const tipoCambioSunatCalculator: CalculatorConfig = {
   categorySlug: 'tipo-de-cambio',
   slug: 'tipo-de-cambio-sunat',
   seo: {
-    metaTitle: 'Tipo de Cambio SUNAT Hoy: Dólar a Soles | Calculadora',
-    metaDescription: 'Consulta el tipo de cambio SUNAT de hoy, conoce el precio de compra y venta del dólar y convierte USD a soles peruanos fácilmente.',
+    metaTitle: '🇵🇪 Tipo de Cambio SUNAT Hoy — Cotización Dólar a Soles al Instante',
+    metaDescription: 'Consulta el tipo de cambio oficial SUNAT de hoy en Perú. Convierte dólares USD a soles PEN con el precio de compra y venta oficial en tiempo real.',
     keywords: [
       'tipo de cambio SUNAT',
       'tipo de cambio SUNAT hoy',

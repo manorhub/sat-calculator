@@ -8,8 +8,8 @@ export const ivaCalculator: CalculatorConfig = {
   categorySlug: 'sat',
   slug: 'calculadora-iva',
   seo: {
-    metaTitle: 'Calculadora de IVA SAT 2026 - Agregar y Desglosar IVA Gratis',
-    metaDescription: 'Calcula el IVA en México de forma rápida. Herramienta para agregar el 16% o el 8% de IVA fronterizo o extraer el IVA de un monto total neto.',
+    metaTitle: '🧮 Calculadora de IVA SAT 2026 — Desglosar e Incluir 16% y 8% Gratis',
+    metaDescription: 'Calcula el IVA 16% u 8% en México al instante. Herramienta gratuita para desglosar el IVA de un monto total o agregar el 16% de IVA a una factura SAT.',
     keywords: ['calculadora iva', 'calcular iva mexico', 'desglosar iva sat', 'iva 16 por ciento', 'iva fronterizo 8 por ciento'],
     schemaType: 'Calculator'
   },

@@ -8,8 +8,8 @@ export const recargosCalculator: CalculatorConfig = {
   categorySlug: 'sat',
   slug: 'calculadora-recargos-actualizacion',
   seo: {
-    metaTitle: 'Calculadora de Recargos y Actualizaciones SAT 2026',
-    metaDescription: 'Calcula el costo total de pagar tus impuestos extemporáneos ante el SAT. Obtén la actualización por inflación (CFF Art. 17-A) y la tasa moratoria del 1.47% mensual.',
+    metaTitle: '🧮 Calculadora de Recargos y Actualizaciones SAT 2026',
+    metaDescription: 'Calcula el costo total de pagar tus impuestos extemporáneos ante el SAT. Obtén la actualización por inflación (CFF Art. 17-A) y la tasa moratoria del 1.47% mensual gratis.',
     keywords: ['recargos y actualizaciones sat', 'calculadora fiscal extemporanea', 'tasa de recargos sat 2026', 'actualizacion por inflacion cff', 'pagar impuestos tarde mexico'],
     schemaType: 'Calculator'
   },

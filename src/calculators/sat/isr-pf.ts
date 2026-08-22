@@ -23,8 +23,8 @@ export const isrPfCalculator: CalculatorConfig = {
   categorySlug: 'sat',
   slug: 'calculadora-isr-pf',
   seo: {
-    metaTitle: 'Calculadora de ISR 2026 - Personas Físicas México',
-    metaDescription: 'Calcula el ISR a pagar al SAT de forma mensual o anual para personas físicas. Basado en las tablas de la Ley de Impuesto sobre la Renta vigentes.',
+    metaTitle: '🧮 Calculadora de ISR 2026 — Personas Físicas SAT México',
+    metaDescription: 'Calcula tu ISR a pagar al SAT de forma mensual o anual gratis. Basado en las tablas de retención de la Ley del Impuesto sobre la Renta 2026.',
     keywords: ['calculadora isr', 'calcular isr personas fisicas', 'isr sat 2026', 'tablas isr mensual', 'isr sobre honorarios'],
     schemaType: 'Calculator'
   },
